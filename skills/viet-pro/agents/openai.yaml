@@ -1,0 +1,6 @@
+interface:
+  display_name: "Việt Pro"
+  short_description: "Viết và biên tập tiếng Việt đa nền tảng"
+  default_prompt: "Dùng $viet-pro để viết hoặc biên tập nội dung tiếng Việt theo brief của tôi."
+policy:
+  allow_implicit_invocation: true

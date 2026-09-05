@@ -1,0 +1,61 @@
+# Instagram — Format Hiển Thị
+
+**Nhân viên:** instagram.md — Ban Xuất bản (publishing/)
+**Mục đích:** Format nội dung cho Instagram caption và carousel. Chỉ format + cắt, không đổi nội dung.
+
+**Mặc định:** caption đơn. Carousel khi user chỉ định hoặc bài có 4+ luận điểm rõ.
+
+---
+
+## 1. Caption (MẶC ĐỊNH)
+
+### Nguyên tắc cốt lõi
+
+- Tổng ≤2.200 ký tự; **125 ký tự đầu quyết định** — hiện trước "more", phải chứa hook trọn vẹn
+- Instagram là kênh cảm xúc: giữ insight + câu chuyện, cắt lập luận dài (chỉ giữ kết luận từng bước)
+- Plaintext, xuống dòng nhiều; dùng dòng trống + ký tự chấm `.` đơn trên dòng riêng để ngắt khối khi cần
+
+### Cấu trúc
+
+```
+[Hook ≤125 ký tự — khẳng định mạnh / số liệu / câu hỏi]
+
+[Thân 3-5 khối cực ngắn (1-3 câu) — chuyện + insight, giọng gần gũi]
+
+[Insight chốt — 1 câu tách riêng]
+
+[CTA — comment/share/save; "save lại để đọc sau" hợp kênh này]
+
+[Hashtag khối cuối: 5-15 tag — trộn tag lớn + tag ngách tiếng Việt]
+```
+
+## 2. Carousel (khi user chỉ định)
+
+Output: text từng slide, 6-10 slide, ≤30 từ/slide.
+
+```
+Slide 1:  HOOK — cụm 5-10 từ, chữ lớn (đây là "tiêu đề" duy nhất được phép)
+Slide 2:  Đặt vấn đề — 1-2 câu
+Slide 3-n-1: Mỗi slide 1 luận điểm/số liệu — 1 câu chính + 1 câu phụ tối đa
+Slide n-1: Insight chốt
+Slide n:  CTA (follow/save) + tên tác giả/kênh
+```
+
+Kèm caption ngắn 300-500 ký tự tóm hook + CTA (dùng mục 1 rút gọn).
+
+### Quy tắc kênh
+
+- Mỗi slide tự đứng được — người xem có thể vào giữa chừng
+- Số liệu: 1 con số/slide, viết to (đưa vào dòng chính)
+- Giọng "mình/bạn", cảm xúc hơn LinkedIn, chững hơn TikTok
+
+---
+
+## Checklist
+
+- [ ] Hook trọn trong 125 ký tự đầu (caption) / slide 1 ≤10 từ (carousel)
+- [ ] Caption ≤2.200 ký tự; slide ≤30 từ
+- [ ] Insight chốt tách riêng
+- [ ] CTA phù hợp kênh (save/share/comment)
+- [ ] 5-15 hashtag khối cuối (caption)
+- [ ] Copy-paste đăng được ngay
