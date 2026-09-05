@@ -3,10 +3,10 @@ name: viet-pro
 description: Viết, biên tập, kiểm chứng và chuyển thể nội dung tiếng Việt cho bài dài, blog, SEO, mạng xã hội, newsletter và kịch bản video. Dùng khi chất lượng tiếng Việt, giọng điệu, nguồn hoặc định dạng kênh là trọng tâm; không dùng cho dịch ngắn hay chỉnh một câu đơn giản.
 metadata:
   author: ABM-DungTQ
-  version: "5.0.0"
+  version: "5.0.1"
 ---
 
-# Việt Pro 5.0 cho Codex
+# Viết Pro 5.0.1 cho Codex
 
 Tạo nội dung tiếng Việt tự nhiên, có chủ đích và có thể kiểm chứng. Điều phối theo độ phức tạp của yêu cầu, không biến mọi tác vụ thành một dây chuyền nhiều agent.
 

@@ -92,6 +92,7 @@ Mọi thay đổi ghi vào đây:
 
 | Ngày | Module | Thay đổi | Nguồn |
 |------|--------|----------|-------|
+| 2026-09-05 | `SKILL.md`, `agents/openai.yaml` | **Bản vá v5.0.1**: chuẩn hóa tên hiển thị thành “Viết Pro”; tài liệu repository chuyển README thành hướng dẫn sử dụng và tách hướng dẫn cài đặt riêng | Phản hồi người dùng |
 | 2026-09-04 | **TOÀN BỘ** | **Nâng cấp v5.0.0 cho Codex**: điều phối thích ứng, progressive disclosure, an toàn nguồn/tệp, ranh giới xuất bản, metadata UI, lint phân biệt house style | Yêu cầu nâng cấp và setup Codex |
 | 2026-06-21 | **TOÀN BỘ** | Đổi tên skill `viet-chuyen-nghiep` → `viet-pro`; sửa 7 tham chiếu gãy (meta/, quality/ → development/, review/); chuẩn hoá LF | Audit bảo trì |
 | 2026-02-26 | `style/advanced.md` | Thêm 6 kỹ thuật nâng cao | Bài viết AI & Gen Z |

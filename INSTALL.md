@@ -1,10 +1,10 @@
-# Việt Pro 5.0.0 cho Codex
+# Viết Pro 5.0.1 cho Codex
 
 Gói này chứa bản Codex-native của `viet-pro`:
 
 ```text
 skills/viet-pro/                  nguồn skill
-dist/viet-pro-5.0.0-codex.zip    gói phát hành
+dist/viet-pro-5.0.1-codex.zip    gói phát hành
 ```
 
 ## Cài đặt

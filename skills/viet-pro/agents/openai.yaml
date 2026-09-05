@@ -1,5 +1,5 @@
 interface:
-  display_name: "Việt Pro"
+  display_name: "Viết Pro"
   short_description: "Viết và biên tập tiếng Việt đa nền tảng"
   default_prompt: "Dùng $viet-pro để viết hoặc biên tập nội dung tiếng Việt theo brief của tôi."
 policy:
