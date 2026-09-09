@@ -1,14 +1,18 @@
 ---
 name: viet-pro
-description: Viết, biên tập, kiểm chứng và chuyển thể nội dung tiếng Việt cho bài dài, blog, SEO, mạng xã hội, newsletter và kịch bản video. Dùng khi chất lượng tiếng Việt, giọng điệu, nguồn hoặc định dạng kênh là trọng tâm; không dùng cho dịch ngắn hay chỉnh một câu đơn giản.
+description: "Viết, biên tập, kiểm chứng và chuyển thể nội dung tiếng Việt chuyên nghiệp cho bài dài, blog, SEO, mạng xã hội, newsletter và kịch bản video. Kích hoạt khi chất lượng tiếng Việt, giọng điệu, kiểm chứng nguồn/claim hoặc định dạng xuất bản theo kênh là trọng tâm; không dùng cho dịch ngắn hay chỉnh một câu đơn giản."
+user-invocable: true
+when_to_use: "Dùng khi người dùng yêu cầu viết mới, biên tập bài viết, rà văn phong tiếng Việt, chống AI slop, kiểm chứng dữ kiện hoặc chuyển thể nội dung đa kênh."
+category: content
+keywords: [vietnamese, writing, editing, fact-check, publishing, content-engine]
 metadata:
   author: ABM-DungTQ
-  version: "5.0.1"
+  version: "5.1.0"
 ---
 
-# Viết Pro 5.0.1 cho Codex
+# Viết Pro — Vietnamese Professional Content Engine
 
-Tạo nội dung tiếng Việt tự nhiên, có chủ đích và có thể kiểm chứng. Điều phối theo độ phức tạp của yêu cầu, không biến mọi tác vụ thành một dây chuyền nhiều agent.
+Tạo nội dung tiếng Việt tự nhiên, có chủ đích và có thể kiểm chứng. Hỗ trợ đa nền tảng (Google Antigravity, AgentKit, Claude, OpenAI Codex). Điều phối linh hoạt theo độ phức tạp của yêu cầu mà không biến mọi tác vụ thành một dây chuyền nhiều agent cồng kềnh.
 
 ## Thứ tự quyền hạn
 
@@ -91,9 +95,11 @@ Lint chỉ là tín hiệu hỗ trợ. WARN không tự động làm bài thất
 
 Sửa tối đa hai vòng có mục tiêu. Nếu chất lượng không cải thiện hoặc hai yêu cầu xung đột, dừng và nêu trade-off thay vì viết lại vô hạn.
 
-## Workspace khi cần artifact
+## Workspace & Artifacts
 
-Khi cần lưu tệp hoặc phối hợp nhiều bước, dùng thư mục làm việc của người dùng:
+Khi cần lưu tệp, đối soát claim hoặc phối hợp nhiều bước:
+- **Trong Google Antigravity (AGY):** Xuất bản thảo thành Markdown Artifact (hoặc ghi vào thư mục dự án) để người dùng duyệt và xem trước trực quan trên giao diện Antigravity.
+- **Trong Codex / Môi trường tệp cục bộ:** Sử dụng thư mục làm việc tiêu chuẩn:
 
 ```text
 content/{yymmdd}-{slug}/

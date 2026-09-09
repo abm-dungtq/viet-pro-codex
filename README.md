@@ -1,14 +1,27 @@
 # Viết Pro — Hướng dẫn sử dụng
 
-**Viết Pro** là skill dành cho việc viết, biên tập, kiểm chứng và chuyển thể nội dung tiếng Việt trong Codex. Skill phù hợp với bài dài, blog, nội dung SEO, mạng xã hội, newsletter và kịch bản video.
+**Viết Pro** là skill chuyên sâu dành cho việc viết, biên tập, kiểm chứng dữ kiện và chuyển thể nội dung tiếng Việt chất lượng cao. Hỗ trợ song song cả **Google Antigravity (AGY)**, **AgentKit**, **Claude** và **OpenAI Codex**. Phù hợp với bài dài, blog, nội dung SEO, mạng xã hội (LinkedIn, Facebook, Zalo), newsletter và kịch bản video.
 
-- Phiên bản hiện tại: **5.0.1**
-- Tên gọi trong giao diện: **Viết Pro**
-- Lệnh gọi trong Codex: **`$viet-pro`**
+- Phiên bản hiện tại: **5.1.0 (Universal: AGY + Codex)**
+- Tên gọi trong hệ thống: **Viết Pro** (`viet-pro`)
+- Trong Google Antigravity: Tự động kích hoạt theo ngữ cảnh hoặc gọi `/viet-pro`
+- Trong OpenAI Codex: Gọi qua tiền tố **`$viet-pro`**
 
 ## Bắt đầu nhanh
 
-Gọi trực tiếp skill ở đầu yêu cầu:
+### Trên Google Antigravity (AGY) / AgentKit
+Yêu cầu trực tiếp bằng ngôn ngữ tự nhiên:
+
+```text
+Dùng skill viet-pro viết một bài LinkedIn 800 chữ về chủ đề AI trong đào tạo nội bộ.
+Độc giả: chủ doanh nghiệp SME.
+Giọng điệu: thực tế, có chiều sâu, không lên lớp.
+Mục tiêu: khiến người đọc lưu bài và đặt lịch tư vấn.
+Giữ nguyên các số liệu và đường dẫn trong tài liệu đính kèm.
+```
+
+### Trên OpenAI Codex
+Gọi trực tiếp ở đầu yêu cầu:
 
 ```text
 $viet-pro Viết một bài LinkedIn 800 chữ về chủ đề AI trong đào tạo nội bộ.
@@ -18,7 +31,7 @@ Mục tiêu: khiến người đọc lưu bài và đặt lịch tư vấn.
 Giữ nguyên các số liệu và đường dẫn trong tài liệu đính kèm.
 ```
 
-Bạn cũng có thể yêu cầu tự nhiên mà không cần gõ tên skill. Codex có thể tự kích hoạt Viết Pro khi trọng tâm là chất lượng tiếng Việt, giọng điệu, kiểm chứng nguồn hoặc chuyển thể nội dung theo kênh.
+Bạn cũng có thể yêu cầu tự nhiên mà không cần gõ tên skill. Cả Antigravity và Codex đều có thể tự động nhận diện và kích hoạt Viết Pro khi trọng tâm yêu cầu là chất lượng tiếng Việt, giọng điệu, kiểm chứng nguồn hoặc chuyển thể nội dung theo kênh.
 
 ## Một brief tốt cần những gì?
 
@@ -142,12 +155,18 @@ Với yêu cầu đơn giản, skill ưu tiên trả kết quả trực tiếp t
 
 Nếu cần tệp cụ thể, hãy ghi rõ định dạng và vị trí mong muốn, ví dụ: `Lưu bản cuối thành Markdown trong thư mục content/`.
 
-## Cài đặt
+## Cài đặt nhanh
 
-README này là tài liệu **hướng dẫn sử dụng**. Hướng dẫn cài skill từ repository hoặc gói ZIP nằm riêng tại [INSTALL.md](INSTALL.md).
+Cài đặt tự động cho **Google Antigravity** và **OpenAI Codex** chỉ với một lệnh:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/main/install.sh | bash
+```
+
+Xem chi tiết về cấu hình symlink, cài đặt theo workspace dự án hoặc kiểm tra linter tại [INSTALL.md](INSTALL.md).
 
 ## Thông tin kỹ thuật
 
 - Source của skill: [`skills/viet-pro`](skills/viet-pro)
-- Gói phát hành: [`dist/viet-pro-5.0.1-codex.zip`](dist/viet-pro-5.0.1-codex.zip)
+- Gói phát hành: [`dist/viet-pro-5.1.0.zip`](dist/viet-pro-5.1.0.zip) (Universal)
 - Mã kiểm tra SHA-256: [SHA256SUMS](SHA256SUMS)
