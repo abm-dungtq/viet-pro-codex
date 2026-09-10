@@ -12,7 +12,7 @@
 ### Nguyên tắc cốt lõi
 
 - Độ dài đích 1.300-3.000 ký tự (LinkedIn cắt "see more" quanh ~200 ký tự đầu)
-- **Dòng 1 quyết định tất cả:** đứng riêng 1 dòng, gây tò mò/khẳng định mạnh, KHÔNG bị cắt giữa chừng ở "see more"
+- **Dòng 1 phải tự đứng được:** nêu thông tin hoặc vấn đề đủ rõ trước "see more"; tò mò chỉ là lựa chọn, không được che ý chính
 - Đoạn NGẮN 1-3 câu, nhiều khoảng trắng — người đọc lướt trên mobile
 - KHÔNG markdown (LinkedIn không render `**`, `#`) — plaintext thuần
 - Không bullet ký tự `-`; nếu cần liệt kê ngắn dùng `→` hoặc số `1.` `2.` (tối đa 1 khối/bài)
@@ -20,7 +20,7 @@
 ### Cấu trúc
 
 ```
-[Dòng hook — 1 câu, đứng riêng]
+[Dòng mở — 1 câu, đứng riêng và có thông tin]
 
 [1-2 câu mở rộng hook, tạo tension]
 
@@ -37,7 +37,7 @@
 
 - Giọng "mình" hoặc "tôi", professional nhưng không cứng — như chia sẻ với đồng nghiệp
 - Link ngoài → để ở comment đầu tiên (ghi chú cuối bài: "Link trong comment"), không dán vào thân bài
-- Nhấn mạnh: KHÔNG có bold → dùng tách dòng + IN HOA chiến lược (tối đa 2-3 cụm, ít hơn Facebook)
+- Nhấn mạnh: LinkedIn post không render bold; chỉ tách dòng hoặc IN HOA khi thêm nghĩa, đúng giọng mẫu hoặc brief yêu cầu
 - Số liệu giữ nguyên từ draft, ghi nguồn ngắn gọn inline
 
 ## 2. LinkedIn Article (khi user chỉ định)
@@ -50,10 +50,10 @@
 
 ## Checklist — Post
 
-- [ ] Dòng 1 tự đứng được, gây tò mò trước "see more"
+- [ ] Dòng 1 tự đứng được và nêu rõ vấn đề trước "see more"
 - [ ] 1.300-3.000 ký tự, đoạn 1-3 câu
 - [ ] Không markdown, không bullet `-`
 - [ ] Link ngoài để comment, không trong thân
-- [ ] IN HOA ≤3 cụm
+- [ ] Nếu có IN HOA, mỗi cụm đều có lý do rõ
 - [ ] 3-5 hashtag dòng cuối
 - [ ] Copy-paste đăng được ngay

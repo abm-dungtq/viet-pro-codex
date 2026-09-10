@@ -28,16 +28,16 @@ Lật khung: "Họ không gian lận. Họ đang chơi đúng luật
 ```
 
 **Quy tắc:**
-- Tối đa 3-4 câu/bài
-- Chỉ dùng cho insight then chốt
-- Đoạn trước và sau nên là đoạn dài (tạo tương phản)
+- Không đặt quota; thường chỉ nên dùng ít
+- Chỉ tách dòng khi câu thêm thông tin thật, cần nhấn theo kênh hoặc phù hợp giọng mẫu
+- Không kéo dài đoạn trước/sau chỉ để dựng tương phản
 
 ---
 
 ## 3. Viết hoa chiến lược (Strategic Caps)
 
-- Chỉ IN HOA cụm từ chứa insight cốt lõi hoặc phản bác trực tiếp
-- Tối đa 4-5 cụm/bài
+- Chỉ IN HOA khi format kênh, trích dẫn gốc hoặc giọng mẫu thực sự cần
+- Không đặt quota để chủ động chèn CAPS
 - Không in hoa cả đoạn — chỉ in hoa câu then chốt
 
 ```
@@ -54,5 +54,5 @@ Lật khung: "Họ không gian lận. Họ đang chơi đúng luật
 ## Checklist
 
 - [ ] Reframing mở rộng góc nhìn, không bao biện?
-- [ ] Câu tách dòng ≤ 4/bài, chỉ cho insight then chốt?
-- [ ] Strategic caps ≤ 5 cụm/bài (hoặc 8-12 nếu debunk)?
+- [ ] Câu tách dòng thêm nghĩa hoặc đúng giọng mẫu?
+- [ ] CAPS có lý do rõ, không dùng để bù cho lập luận yếu?

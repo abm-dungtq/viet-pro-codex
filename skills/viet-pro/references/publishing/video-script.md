@@ -3,7 +3,7 @@
 **Nhân viên:** video-script.md — Ban Xuất bản (publishing/)
 **Mục đích:** Chuyển bài viết thành kịch bản video. **ĐÂY LÀ TRANSFORMATION** — được viết lại thành văn nói; insight, số liệu, lập luận giữ nguyên.
 
-**NGOẠI LỆ khai báo (xem review/consistency.md):** văn nói — không áp 70-20-10, được lặp từ có chủ đích, câu ngắn dồn dập hợp lệ.
+**NGOẠI LỆ khai báo (xem review/consistency.md):** văn nói được lặp từ và dùng câu ngắn dồn dập khi có chủ đích. 70-20-10 không phải quota ở bất kỳ định dạng nào.
 
 **Mặc định:** video ngắn (TikTok/Reels/Shorts). YouTube dài khi user chỉ định.
 
@@ -14,7 +14,7 @@
 ### Nguyên tắc cốt lõi
 
 - Tốc độ nói tiếng Việt ~2,5-3 từ/giây → 60s ≈ 150-180 từ. Đếm từ trước khi chốt
-- **Hook 3 giây đầu quyết định tất cả:** câu sốc / số liệu / câu hỏi ngược — lấy từ insight hoặc số liệu đắt nhất của draft, KHÔNG mở bằng "Xin chào"
+- **3 giây đầu phải vào đúng ý:** dùng dữ kiện, nhận định hoặc câu hỏi liên quan trực tiếp từ draft; không bắt buộc gây sốc và không mở bằng lời chào dài
 - 1 video = 1 insight duy nhất. Draft nhiều ý → chọn ý mạnh nhất (các ý khác ghi chú "video sau")
 - Văn nói: câu ngắn, chủ động, xưng "mình" nói với "bạn"; đọc to lên phải tự nhiên
 

@@ -39,7 +39,7 @@ Meta description: ≤155 ký tự, chứa keyword + lời hứa giá trị
 - Internal link: chèn placeholder `[liên kết: chủ đề liên quan]` tại 2-3 điểm tự nhiên — user tự thay link thật
 - Bullet: CHỈ cho danh sách thực sự (specs, bước làm) — thân lập luận vẫn văn xuôi
 - Ảnh: chèn placeholder `[ảnh: mô tả + alt text gợi ý]` sau mở bài và mỗi 2-3 section
-- Đoạn văn giữ nhịp 70-20-10 của draft; không ép đoạn ngắn "cho SEO"
+- Độ dài đoạn theo mạch ý của draft; có thể dùng 70-20-10 như tín hiệu rà nhịp, không phải quota và không ép đoạn ngắn "cho SEO"
 
 ---
 

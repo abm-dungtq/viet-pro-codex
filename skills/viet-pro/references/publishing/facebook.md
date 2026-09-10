@@ -36,11 +36,11 @@ Trên FB cá nhân không có bold/italic. Dùng:
 
 | Kỹ thuật | Khi dùng | Ví dụ |
 |----------|----------|-------|
-| IN HOA cụm từ | Phản bác trực tiếp, insight then chốt | "KHÔNG CÓ NGHĨA LÀ 30% NHÂN VIÊN MẤT VIỆC" |
+| IN HOA cụm từ | Trích dẫn gốc, phản bác cần phân biệt rõ hoặc giọng mẫu có chủ đích | "KHÔNG CÓ NGHĨA LÀ 30% NHÂN VIÊN MẤT VIỆC" |
 | Ngoặc kép "" | Thuật ngữ, trích dẫn, khái niệm đặt tên | "phán xét mượn danh" |
 | Ngoặc đơn () | Giải thích nhanh, con số phụ | (gấp đôi thời lượng) |
 
-IN HOA chiến lược: dùng cho phản bác/insight cốt lõi. Tối đa 8-12 cụm nếu bài debunk, 3-5 cụm nếu bài phân tích.
+IN HOA là lựa chọn, không phải quota. Chỉ giữ khi thêm thông tin thật, cần phân biệt source-vs-claim hoặc phù hợp giọng mẫu; không chủ động chèn để tạo kịch tính.
 
 ### Giọng văn
 
@@ -90,7 +90,7 @@ Page/group hỗ trợ rich text nên không cần chuyển đổi format.
 - [ ] Không có markdown, HTML
 - [ ] Tách đoạn chỉ bằng dòng trống
 - [ ] Đoạn dài cho logic chain, đoạn ngắn cho insight
-- [ ] IN HOA chiến lược (không tràn lan)
+- [ ] Nếu có IN HOA, mỗi cụm đều có lý do nội dung hoặc giọng mẫu
 - [ ] Giọng "mình/tôi", conversational
 - [ ] Nguồn đan xen trong bài hoặc ở comment
 - [ ] Copy-paste thẳng vào Facebook được ngay

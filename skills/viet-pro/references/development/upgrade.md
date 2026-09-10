@@ -92,6 +92,7 @@ Mọi thay đổi ghi vào đây:
 
 | Ngày | Module | Thay đổi | Nguồn |
 |------|--------|----------|-------|
+| 2026-09-10 | `SKILL.md`, `review/`, `editorial/`, `scripts/`, tài liệu phát hành | **Nâng cấp v5.2.0**: tích hợp 25 pattern Humanizer 3.0.0 cho tiếng Việt; thêm rà nhẹ mặc định, audit theo yêu cầu, bảo toàn dữ kiện, giảm các công thức hook/nhịp/kết bài và mở rộng linter | Humanizer 3.0.0 + kế hoạch người dùng duyệt |
 | 2026-09-05 | `SKILL.md`, `agents/openai.yaml` | **Bản vá v5.0.1**: chuẩn hóa tên hiển thị thành “Viết Pro”; tài liệu repository chuyển README thành hướng dẫn sử dụng và tách hướng dẫn cài đặt riêng | Phản hồi người dùng |
 | 2026-09-04 | **TOÀN BỘ** | **Nâng cấp v5.0.0 cho Codex**: điều phối thích ứng, progressive disclosure, an toàn nguồn/tệp, ranh giới xuất bản, metadata UI, lint phân biệt house style | Yêu cầu nâng cấp và setup Codex |
 | 2026-06-21 | **TOÀN BỘ** | Đổi tên skill `viet-chuyen-nghiep` → `viet-pro`; sửa 7 tham chiếu gãy (meta/, quality/ → development/, review/); chuẩn hoá LF | Audit bảo trì |

@@ -20,11 +20,11 @@
 ### Cấu trúc
 
 ```
-Tweet 1:  Hook tự đứng — số liệu sốc / khẳng định ngược / câu hỏi đắt
+Tweet 1:  Mở bài tự đứng — dữ kiện / nhận định / câu hỏi liên quan trực tiếp
 Tweet 2:  Bối cảnh tối thiểu — vì sao chuyện này đáng quan tâm (2/n)
 Tweet 3-n-2: Mỗi tweet 1 luận điểm/bằng chứng, theo đúng thứ tự logic chain của draft
 Tweet n-1: Insight chốt — câu đáng nhớ nhất
-Tweet n:  One-liner kết HOẶC CTA (follow/link/câu hỏi mở)
+Tweet n:  Dữ kiện hoặc kết luận ngắn HOẶC CTA nếu brief yêu cầu
 ```
 
 ### Quy tắc kênh
@@ -48,5 +48,5 @@ Tweet n:  One-liner kết HOẶC CTA (follow/link/câu hỏi mở)
 - [ ] 1 ý/tweet, không cắt câu giữa chừng
 - [ ] 5-12 tweet, đánh số `(k/n)` từ tweet 2
 - [ ] Không từ nối thừa giữa các tweet
-- [ ] Tweet cuối là one-liner/CTA
+- [ ] Tweet cuối có thông tin/kết luận rõ hoặc CTA được brief yêu cầu
 - [ ] Output file: mỗi tweet 1 khối, ngăn cách dòng `---`

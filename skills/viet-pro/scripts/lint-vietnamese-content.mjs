@@ -28,6 +28,10 @@ const LINE_RULES = [
     check: (l) => [...l.matchAll(/\b(Key insights?:|Key takeaways?:|Note:|Summary:)|Trong bài viết này/gu)].map((m) => m[0]),
   },
   {
+    id: 'chatbot-residue', level: 'WARN', desc: 'Lời thoại trợ lý có thể đã lọt vào nội dung công khai (humanizer pattern 22)',
+    check: (l) => [...l.matchAll(/(?:^|\s)(Dưới đây là|Hy vọng (?:nội dung|bài viết) này hữu ích|Bạn có muốn tôi|Tôi có thể giúp bạn)/giu)].map((m) => m[0].trim()),
+  },
+  {
     id: 'heading-colon', level: 'WARN', desc: 'House style viet-pro hạn chế dấu hai chấm trong tiêu đề',
     check: (l) => /^#{1,6}\s.*:\s*\S/.test(l) || /^#{1,6}\s.*:\s*$/.test(l) ? [l.trim().slice(0, 60)] : [],
   },
@@ -41,6 +45,21 @@ const LINE_RULES = [
     check: (l) => [...l.matchAll(/(?:\p{Lu}\p{Ll}+ ){3,}\p{Lu}\p{Ll}+/gu)].map((m) => m[0].slice(0, 50)),
   },
 ];
+
+function stripProtectedBlocks(text) {
+  const lines = text.split('\n');
+  let inFence = false;
+  let inFrontmatter = lines[0]?.trim() === '---';
+  return lines.map((line, i) => {
+    if (i === 0 && inFrontmatter) return '';
+    if (inFrontmatter) {
+      if (line.trim() === '---') inFrontmatter = false;
+      return '';
+    }
+    if (/^\s*```/.test(line)) { inFence = !inFence; return ''; }
+    return inFence ? '' : line;
+  }).join('\n');
+}
 
 // Whole-text rules
 function textRules(text) {
@@ -58,6 +77,18 @@ function textRules(text) {
     run = Math.abs(counts[i] - counts[i - 1]) <= 1 ? run + 1 : 1;
     if (run === 5) { findings.push({ level: 'WARN', id: 'paragraph-uniformity', line: 0, excerpt: '5+ đoạn liên tiếp cùng độ dài (nghi AI)' }); break; }
   }
+  const proseLines = text.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#') && !l.startsWith('|'));
+  const opener = proseLines.slice(0, 3).find((l) => /^(Hãy tưởng tượng|Trong (?:bối cảnh|thế giới|kỷ nguyên)\b)/iu.test(l));
+  if (opener) findings.push({ level: 'WARN', id: 'staged-opener', line: 0, excerpt: opener.slice(0, 90) });
+
+  const contrasts = [...text.matchAll(/không\s+(?:chỉ|phải)\s+[^.!?\n]{0,120}(?:mà\s+còn|mà\s+là)/giu)];
+  if (contrasts.length > 1) findings.push({ level: 'WARN', id: 'contrast-formula-repeat', line: 0, excerpt: `Công thức đối lập xuất hiện ${contrasts.length} lần` });
+
+  const boldLabels = [...text.matchAll(/^\s*\*\*[^*\n:]{1,40}:\*\*/gmu)];
+  if (boldLabels.length >= 3) findings.push({ level: 'WARN', id: 'decorative-bold-labels', line: 0, excerpt: `${boldLabels.length} đoạn mở bằng nhãn bold` });
+
+  const dramaticClosers = proseLines.filter((l) => l.length <= 100 && /^(Và đó mới là|Đó mới là điều|Không ai (?:còn )?có thể làm ngơ|Hãy để điều đó)/iu.test(l));
+  if (dramaticClosers.length > 1) findings.push({ level: 'WARN', id: 'dramatic-closer-repeat', line: 0, excerpt: `${dramaticClosers.length} câu kết/fragment kịch tính` });
   return findings;
 }
 
@@ -65,7 +96,13 @@ function lintText(text) {
   const findings = [];
   const lines = text.split('\n');
   let inFence = false;
+  let inFrontmatter = lines[0]?.trim() === '---';
   lines.forEach((line, i) => {
+    if (i === 0 && inFrontmatter) return;
+    if (inFrontmatter) {
+      if (line.trim() === '---') inFrontmatter = false;
+      return;
+    }
     if (/^\s*```/.test(line)) { inFence = !inFence; return; }
     if (inFence) return;
     for (const rule of LINE_RULES) {
@@ -74,7 +111,7 @@ function lintText(text) {
       }
     }
   });
-  findings.push(...textRules(text));
+  findings.push(...textRules(stripProtectedBlocks(text)));
   return findings;
 }
 
@@ -86,6 +123,7 @@ function report(file, findings) {
 // ---------------- self-test ----------------
 function selfTest() {
   const dirty = [
+    'Trong bối cảnh thị trường thay đổi nhanh, doanh nghiệp cần thích nghi.',
     'Đây là câu có em-dash — sai quy tắc.',
     'Câu này có en-dash – cũng sai.',
     'Nhanh hơn, sạch hơn, và đúng hơn.',
@@ -93,17 +131,27 @@ function selfTest() {
     'Key insights: đây là nhãn AI.',
     '# Vibe coding: lỗi không phải ở AI',
     'Hướng Dẫn Sử Dụng Phần Mềm Kế Toán ngay hôm nay.',
+    'Dưới đây là bài viết bạn yêu cầu.',
+    'Đây không chỉ là chuyện chi phí mà còn là chuyện tốc độ.',
+    'Đó không phải là lỗi công cụ mà là lỗi quy trình.',
+    '**Bối cảnh:** Doanh thu giảm.',
+    '**Vấn đề:** Tỷ lệ hoàn đơn tăng.',
+    '**Kết luận:** Nhóm cần kiểm tra dữ liệu.',
+    'Và đó mới là điều đáng sợ.',
+    'Không ai còn có thể làm ngơ.',
   ].join('\n\n');
   const clean = [
     'Đây là câu sạch, đúng chuẩn tiếng Việt.',
     '# Tiêu đề không có dấu hai chấm',
     'Quán cà phê có 10 đầu việc, 3 đầu việc đang dùng AI (phơi nhiễm 30%).',
     'Giờ hẹn là 14:30 ngày mai.',
+    'Gói này không chỉ có 10 GB lưu trữ mà còn có sao lưu hằng ngày.',
+    'Đăng ký trước ngày 30/09 nếu bạn muốn tham dự buổi hướng dẫn.',
   ].join('\n\n');
 
   const dirtyFindings = lintText(dirty);
   const cleanFindings = lintText(clean).filter((f) => f.level === 'ERROR');
-  const expect = ['em-dash', 'oxford-comma', 'space-before-punct', 'ai-label', 'heading-colon', 'title-case'];
+  const expect = ['em-dash', 'oxford-comma', 'space-before-punct', 'ai-label', 'heading-colon', 'title-case', 'chatbot-residue', 'staged-opener', 'contrast-formula-repeat', 'decorative-bold-labels', 'dramatic-closer-repeat'];
   const got = new Set(dirtyFindings.map((f) => f.id));
   const missed = expect.filter((r) => !got.has(r));
   let transitionText = 'Mở bài. Tuy nhiên, một. Tuy nhiên, hai. Tuy nhiên, ba. Tuy nhiên, bốn.';
@@ -111,8 +159,12 @@ function selfTest() {
 
   if (missed.length) { console.error(`SELF-TEST FAIL — không bắt được: ${missed.join(', ')}`); process.exit(1); }
   if (!transitionHit) { console.error('SELF-TEST FAIL — không bắt transition-overuse'); process.exit(1); }
-  if (cleanFindings.length) { console.error(`SELF-TEST FAIL — false positive trên văn sạch: ${JSON.stringify(cleanFindings)}`); process.exit(1); }
-  console.log('SELF-TEST PASS — bắt đủ 7 loại vi phạm, 0 false positive ERROR trên văn sạch');
+  const protectedText = '---\ntitle: "Dưới đây là cấu hình"\n---\n\n```yaml\nsummary: "Dưới đây là dữ liệu"\n```\n\nGói này không chỉ có 10 GB lưu trữ mà còn có sao lưu hằng ngày.';
+  const protectedFindings = lintText(protectedText).filter((f) => ['chatbot-residue', 'contrast-formula-repeat', 'staged-opener'].includes(f.id));
+
+  if (cleanFindings.length) { console.error(`SELF-TEST FAIL — false positive ERROR trên văn sạch: ${JSON.stringify(cleanFindings)}`); process.exit(1); }
+  if (protectedFindings.length) { console.error(`SELF-TEST FAIL — false positive trên frontmatter/code/câu đối lập hợp lệ: ${JSON.stringify(protectedFindings)}`); process.exit(1); }
+  console.log(`SELF-TEST PASS — bắt đủ ${expect.length + 1} nhóm vi phạm, không báo sai frontmatter/code/câu đối lập đơn lẻ`);
   process.exit(0);
 }
 

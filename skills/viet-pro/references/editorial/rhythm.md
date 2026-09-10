@@ -6,11 +6,13 @@
 
 ---
 
-## 1. Quy tắc 70-20-10
+## 1. Tín hiệu rà nhịp 70-20-10
 
-- **70% đoạn trung/dài (3-7 câu):** Giải thích chính, xây lập luận
-- **20% đoạn ngắn (1-2 câu):** Chuyển đoạn, nhấn mạnh
-- **10% câu đơn:** Insights then chốt, khoảnh khắc dramatic
+Tỷ lệ 70-20-10 chỉ là ví dụ để phát hiện bài có nhịp quá đều, **không phải quota phải áp**. Nội dung, kênh và giọng mẫu quyết định độ dài đoạn. Một phân bố tham khảo có thể là:
+
+- phần lớn đoạn trung/dài để giải thích và xây lập luận;
+- một số đoạn ngắn để chuyển ý hoặc nhấn thông tin;
+- rất ít câu đứng riêng, chỉ khi việc tách dòng thêm nghĩa hoặc đúng giọng mẫu.
 
 ```
 [Đoạn dài setup tình huống]
@@ -19,7 +21,7 @@
 
 [Đoạn ngắn chuyển tiếp]
 
-Insight mạnh mẽ đứng độc lập.
+Dữ kiện cần nhấn mạnh có thể đứng độc lập nếu ngữ cảnh cần.
 
 [Đoạn dài với resolution]
 ```
@@ -36,7 +38,7 @@ Insight mạnh mẽ đứng độc lập.
 | Chuỗi logic A→B→C→D dài | Personal essay: tình huống → vấn đề → insight → chứng minh | Ngắt đoạn = phá vỡ flow lập luận, insight không đủ sức |
 | Show-don't-tell cần nhiều chi tiết | Kể cụ thể "không biết đọc báo cáo tài chính theo thứ tự nào, chỉ số nào cần cảnh báo..." | Ngắt = mất tính cụ thể, thành tell thay vì show |
 
-**Giới hạn:** Tối đa 1-2 đoạn siêu dài/bài. Trước và sau đoạn siêu dài phải có đoạn ngắn hoặc câu đơn tạo nhịp thở.
+**Giới hạn tham khảo:** Thường chỉ 1-2 đoạn siêu dài/bài. Ngắt ở nơi mạch nghĩa cần, không chèn câu đơn chỉ để tạo tương phản.
 
 **Cấm:** Đoạn dài vì lười ngắt. Nếu đoạn dài mà mỗi câu có thể đứng độc lập → phải ngắt.
 
@@ -46,7 +48,7 @@ Insight mạnh mẽ đứng độc lập.
 
 **Tăng tension:**
 ```
-Setup dài → Complication trung → Crisis ngắn → Câu dramatic đơn
+Setup dài → Vấn đề trung → Dữ kiện then chốt ngắn
 ```
 
 **Giải phóng tension:**
@@ -54,7 +56,7 @@ Setup dài → Complication trung → Crisis ngắn → Câu dramatic đơn
 Impact đơn → Breath ngắn → Explanation trung → Exploration dài
 ```
 
-**Không bao giờ predictable.** Vary rhythm liên tục.
+Tránh nhịp đều máy móc, nhưng không cố biến thiên liên tục. Nhịp phải theo ý và giọng mẫu.
 
 ---
 
@@ -62,12 +64,12 @@ Impact đơn → Breath ngắn → Explanation trung → Exploration dài
 
 1. **Viết raw:** Dump logic + examples, flow tự nhiên
 2. **Shape:** Đọc to, break tại pause tự nhiên
-3. **Điều chỉnh:** Áp 70-20-10, vary đoạn
+3. **Điều chỉnh:** Dùng 70-20-10 như tín hiệu rà; chỉ đổi độ dài đoạn khi cải thiện mạch đọc
 
 ---
 
 ## Checklist hoàn thành
 
-- [ ] Phân bố 70-20-10 paragraph?
-- [ ] Emotional pacing varies?
-- [ ] Không có 3+ đoạn liên tiếp cùng độ dài?
+- [ ] Độ dài đoạn phục vụ mạch ý, không chạy theo quota?
+- [ ] Nhịp phù hợp cảm xúc và giọng mẫu?
+- [ ] Các đoạn cùng độ dài có lý do nội dung, không phải công thức lặp?

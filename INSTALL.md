@@ -3,8 +3,8 @@
 Gói này chứa bản Universal của `viet-pro`, sẵn sàng hoạt động trên **Google Antigravity (AGY)**, **AgentKit**, **Claude** và **OpenAI Codex**:
 
 ```text
-skills/viet-pro/                  nguồn skill chuẩn (SKILL.md, references/, scripts/)
-dist/viet-pro-5.0.1-codex.zip    gói phát hành lưu trữ
+skills/viet-pro/              nguồn skill chuẩn (SKILL.md, references/, scripts/)
+dist/viet-pro-5.2.0.zip       gói phát hành Universal
 ```
 
 ---
@@ -72,6 +72,13 @@ $viet-pro Viết một bài LinkedIn tiếng Việt theo brief sau...
 
 *(Tệp `skills/viet-pro/agents/openai.yaml` đã được tích hợp sẵn để Codex tự động nạp giao diện và nhận diện lệnh).*
 
+Nếu đang nâng cấp một bản cài theo chế độ copy, nên sao lưu thư mục `viet-pro` hiện tại rồi thay toàn bộ thư mục bằng bản 5.2.0. Không trộn file của hai phiên bản. Có thể xác minh gói phát hành bằng:
+
+```bash
+shasum -a 256 -c SHA256SUMS
+unzip -t dist/viet-pro-5.2.0.zip
+```
+
 ---
 
 ## 4. Kiểm tra cài đặt & Linter
@@ -80,6 +87,8 @@ Chạy bộ tự kiểm tra của linter tiếng Việt tích hợp sẵn:
 
 ```bash
 node skills/viet-pro/scripts/lint-vietnamese-content.mjs --self-test
+node skills/viet-pro/scripts/compare-preserved-content.mjs --self-test
+node skills/viet-pro/scripts/test-humanizer-contract.mjs
 ```
 
 Nếu muốn kiểm tra tính hợp lệ của tệp `SKILL.md`:
@@ -93,6 +102,8 @@ console.log('SKILL.md frontmatter verified!');
 "
 ```
 
+Humanizer 3.0.0 được tích hợp nội bộ trong `$viet-pro`; không có lệnh `$humanizer` riêng. Thông báo MIT đầy đủ được phân phối tại `skills/viet-pro/THIRD_PARTY_NOTICES.md`.
+
 ---
 
 ## 5. Bảng đối chiếu giữa các môi trường
@@ -104,4 +115,3 @@ console.log('SKILL.md frontmatter verified!');
 | **Giao diện cấu hình** | Chuẩn Antigravity Progressive Disclosure | `agents/openai.yaml` |
 | **Lưu trữ sản phẩm** | AGY Markdown Artifacts / Workspace file | `content/{yymmdd}-{slug}/` |
 | **Linter tiếng Việt** | Chạy độc lập qua Node.js | Chạy độc lập qua Node.js |
-

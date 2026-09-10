@@ -8,14 +8,14 @@
 
 ## 1. Core Insight
 
-Mọi story cần một insight bất ngờ — counterintuitive, diễn đạt trong 1 câu.
+Mỗi story cần một ý chính rõ và có căn cứ. Insight bất ngờ hoặc counterintuitive chỉ dùng khi nó thực sự có trong dữ liệu; không tạo nghịch lý để gây ấn tượng. Có thể diễn đạt ý chính trong một câu để kiểm tra độ rõ, nhưng không bắt buộc đưa nguyên câu đó vào bài.
 
 ```
 ❌ "Leadership quan trọng"
 ✅ "CEO giải quyết vấn đề bằng con người. Manager giải quyết con người như vấn đề."
 ```
 
-**Cách tìm:** Quan sát patterns → Hỏi "điều gì bất ngờ?" → Tìm mâu thuẫn → Đảo ngược conventional wisdom
+**Cách tìm:** Quan sát dữ kiện → xác định điều người đọc cần hiểu → tìm quan hệ nhân quả hoặc mâu thuẫn có thật → viết thành ý chính.
 
 ---
 
@@ -89,7 +89,7 @@ không có gì thì nhân lên cũng bằng không.
 
 ## Workflow
 
-1. **Tìm insight (10 phút):** Realization bất ngờ là gì? Diễn đạt trong 1 câu
+1. **Tìm ý chính (10 phút):** Người đọc cần hiểu điều gì? Dữ kiện nào hỗ trợ? Diễn đạt thử trong 1 câu
 2. **Xây logic chain (15 phút):** A → B → C → D, mỗi step theo tự nhiên
 3. **Tìm examples (10 phút):** Số liệu, tình huống cụ thể cho mỗi step
 4. **Viết raw (20 phút):** Dump logic + examples, flow tự nhiên
@@ -111,7 +111,7 @@ không có gì thì nhân lên cũng bằng không.
 
 ## Checklist
 
-- [ ] Core insight có bất ngờ?
+- [ ] Ý chính rõ, có căn cứ và không bị kịch tính hóa?
 - [ ] Logic chain flow tự nhiên?
 - [ ] Examples cụ thể và concrete?
 - [ ] Show (không tell) throughout?

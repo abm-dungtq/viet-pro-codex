@@ -1,68 +1,25 @@
-# BTV Phát Hiện AI — Anti-AI
+# Router Humanizer
 
-**Nhân viên:** anti-ai.md
-**Ban:** Kiểm duyệt (review/)
-**Chuyên môn:** Phát hiện và loại bỏ patterns AI trong văn viết tiếng Việt.
+Humanizer là một lớp biên tập giúp văn xuôi rõ, cụ thể và tự nhiên hơn. Dấu hiệu trong tài liệu này **không chứng minh** văn bản do AI tạo ra.
 
----
+## Chọn mức rà
 
-## 1. Lỗi AI cơ bản
+- **Mặc định, kiểm tra nhẹ:** áp dụng cho mọi văn xuôi công khai. Tìm chatbot residue, mở bài dàn cảnh, công thức đối lập, nhãn bold trang trí, câu kết kịch tính và cụm dấu hiệu lặp lại. Chỉ sửa phần gây cản trở.
+- **Rà đầy đủ:** đọc toàn bộ `humanizer-patterns.md` khi người dùng yêu cầu humanize, "bớt AI", audit dấu hiệu AI hoặc khi một đoạn có nhiều dấu hiệu đồng thời.
+- **Không áp:** code, frontmatter, lệnh, dữ liệu có cấu trúc và đích URL. Với tài liệu kỹ thuật, chỉ sửa phần văn xuôi.
 
-### Over-formatting
-```
-❌ **Điểm 1**: Bla bla / **Điểm 2**: Bla bla / **Kết luận**: ...
-✅ Điểm thứ nhất là... Tiếp theo, chúng ta thấy... Cuối cùng...
-```
+## Quy trình
 
-### Mixed Language
-```
-❌ "Team của chúng tôi deliver results xuất sắc trong quarter vừa rồi"
-✅ "Đội ngũ mang lại kết quả xuất sắc trong quý vừa rồi"
-```
+1. **Phát hiện:** đánh dấu pattern và đoạn liên quan; pattern mạnh 1-5 có thể đáng sửa từ một lần xuất hiện, pattern yếu cần thành cụm hoặc gây hại rõ.
+2. **Viết lại theo đoạn:** nêu ý chính sớm hơn, thay khái quát bằng chi tiết có sẵn, bỏ nhịp/cấu trúc trang trí. Không cố tình thêm lỗi để "giống người".
+3. **Đối chiếu dữ kiện:** so trước/sau với tên, số, ngày, URL, quote (kể cả dấu bao quanh khi phải giữ nguyên), citation, thứ hạng, quan điểm, CTA được yêu cầu và chi tiết xảy ra đồng thời.
+4. **Trả bản cuối:** mặc định chỉ đưa bản đã sửa và cảnh báo dữ kiện cần thiết. Khi người dùng yêu cầu audit, thêm pattern, đoạn liên quan, lý do sửa và nguy cơ mất dữ kiện.
 
-### Title Case
-```
-❌ Chương 1: Phân Tích Thị Trường Việt Nam
-✅ Chương 1: Phân tích thị trường Việt Nam
-```
+## Nguyên tắc chặn sửa quá tay
 
-### Nhãn kiểu AI
-```
-❌ "Key insights:", "Note:", "Summary:"
-✅ "Điểm nổi bật:", "Lưu ý:", "Tóm lại:"
-```
+- Brief và giọng mẫu đứng trên các heuristic phong cách.
+- Một dấu gạch ngang, một câu ngắn, một phép đối lập hay một ẩn dụ có ích không phải lỗi.
+- Nội dung marketing vẫn được thuyết phục và giữ CTA khi brief yêu cầu; chỉ bỏ phóng đại rỗng hoặc claim thiếu nguồn.
+- Nếu bản gốc đã tự nhiên, giữ nguyên phần lớn câu chữ. Mục tiêu là thay đổi tối thiểu có ích, không đồng nhất hóa giọng viết.
 
----
-
-## 2. Dấu hiệu AI nâng cao (Self-Check)
-
-| Pattern | Mô tả | Cách phát hiện |
-|---------|--------|----------------|
-| **Paragraph uniformity** | Đoạn văn đều đặn 80-120 từ | Đếm số câu/đoạn — nếu quá đều → sai |
-| **Transition overuse** | Lạm dụng "Tuy nhiên", "Bên cạnh đó" | >3 lần/bài cùng 1 từ nối → sai |
-| **Cautious hedging** | Quá nhiều "có thể", "thường" | Nếu mọi claim đều hedge → thiếu cam kết |
-| **Balanced structure** | Mỗi point phát triển đều đặn | Real writing: có ý nói nhiều, ý lướt qua |
-| **Professional smoothness** | Quá chung chung, đều giọng, thiếu chi tiết đặc thù | Kiểm tra mức cụ thể và voice, không cố tình tạo lỗi |
-| **Artificial chaos** | Cố viết "tự nhiên" bằng lỗi hoặc ngẫu nhiên giả tạo | Giữ ngữ pháp đúng; tạo nhịp bằng lựa chọn nội dung |
-
-→ Phân tích chi tiết hơn: xem `development/style-audit.md`
-
----
-
-## 3. Checklist rà soát tự động
-
-Dùng grep_search để tìm:
-- `Tuy nhiên,` / `Bên cạnh đó,` / `Ngoài ra,` → nghi AI
-- `Key ` / `Note:` / `Summary:` → nhãn AI
-- `**` (bold) trong content tự nhiên → over-formatting
-- Đếm paragraph length → nếu quá đều → nghi AI
-
----
-
-## Checklist hoàn thành
-
-- [ ] Không có nhãn AI (Key, Note, Summary)
-- [ ] Không over-formatting (bold labels, numbered headers trong storytelling)
-- [ ] Đoạn văn biến thiên (không đều nhau)
-- [ ] Từ nối đa dạng (không lạm dụng 1 từ nối)
-- [ ] Có chi tiết và nhịp điệu đặc thù, không cố tình tạo lỗi để giả tự nhiên
+Danh mục đầy đủ: `humanizer-patterns.md`. Linter chỉ bắt các dấu hiệu ổn định; pattern cần hiểu ngữ nghĩa phải do người/model rà trong ngữ cảnh.

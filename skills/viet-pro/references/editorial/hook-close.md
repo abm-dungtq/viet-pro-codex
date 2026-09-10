@@ -2,7 +2,7 @@
 
 **Nhân viên:** hook-close.md
 **Ban:** Biên tập (editorial/)
-**Chức năng:** Mở bài + kết bài — đóng khung câu chuyện bằng hook mạnh và close ám ảnh.
+**Chức năng:** Mở bài + kết bài — giúp người đọc vào đúng vấn đề và rời bài với một ý hoặc dữ kiện rõ.
 
 ---
 
@@ -10,14 +10,14 @@
 
 ```
 ❌ "Trong bài viết này, tôi sẽ..."
-✅ Bắt đầu với surprising statement, scenario, câu hỏi, hoặc góc nhìn bất ngờ
+✅ Bắt đầu bằng dữ kiện, tình huống, câu hỏi hoặc nhận định liên quan trực tiếp
 ```
 
 | Kiểu | Công thức | Ví dụ |
 |------|-----------|-------|
 | Behavioral | Mô tả hành vi cụ thể ai cũng nhận ra | "Trước mỗi trận bóng lớn, hàng triệu người gõ XoilacTV" |
-| Prediction | Dự đoán táo bạo | "Trong vài thập kỷ nữa, sẽ chẳng còn mấy người biết viết" |
-| Shock Data | Con số sốc ngay dòng đầu | "72.000 học sinh không đủ điểm vào lớp 10 công lập" |
+| Prediction | Dự đoán có căn cứ và nêu điều kiện | "Nếu tỷ lệ này giữ nguyên, công suất sẽ thiếu từ quý IV" |
+| Data | Con số quan trọng ngay dòng đầu | "72.000 học sinh không đủ điểm vào lớp 10 công lập" |
 | Anecdote | Câu chuyện cá nhân chứng kiến | "Tôi yêu cầu nhân viên lên kế hoạch... cậu nộp lại sau 1 giờ" |
 
 **Quy tắc:** Hook phải kết nối trực tiếp đến core insight. Hook đẹp nhưng vô quan = thất bại.
@@ -26,7 +26,7 @@
 
 ## 2. Body Flow
 
-Setup tình huống → Giới thiệu complication → Tăng tension → Insight hiện ra → Resolution
+Setup tình huống → Giới thiệu vấn đề → Phát triển bằng chứng → Ý chính hiện ra → Kết quả hoặc quyết định
 
 ### 2.1 Treo rồi giải thích (Delayed Reveal)
 
@@ -62,12 +62,12 @@ Nêu tên/thuật ngữ (treo) → 2-3 đoạn tình huống/bối cảnh khác
 | One-liner | Essay, bình luận | "Sẽ vẫn có người thông minh, nhưng chỉ những người chọn như vậy" |
 | Callback | Story dài | Quay lại ẩn dụ/hình ảnh mở đầu, khép vòng |
 
-**Cấm:** Kết bằng tóm tắt. Kết bài phải ám ảnh, không phải recap.
+One-liner, câu hỏi và callback là lựa chọn, không phải yêu cầu. Có thể kết ở một dữ kiện, quyết định hoặc hệ quả cụ thể. Tránh recap máy móc và tránh câu kịch tính không thêm thông tin.
 
 ---
 
 ## Checklist
 
 - [ ] Hook kết nối đến core insight?
-- [ ] Body flow có tension?
-- [ ] Close ám ảnh (không recap)?
+- [ ] Body flow có logic và đủ bằng chứng?
+- [ ] Close rõ, đúng giọng và không kịch tính hóa rỗng?

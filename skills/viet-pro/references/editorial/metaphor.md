@@ -8,6 +8,8 @@
 
 ## 1. Ẩn dụ mở rộng với callback (Extended Metaphor)
 
+Ẩn dụ là lựa chọn, không phải thành phần bắt buộc. Chỉ dùng khi giúp người đọc hiểu một quan hệ khó bằng hình ảnh quen thuộc hoặc khi giọng mẫu thường dùng cách này.
+
 **Cấu trúc 3 điểm chạm:**
 ```
 Điểm 1 — Giới thiệu:
@@ -19,7 +21,7 @@
     Nhưng người thiết kế khu bảo tồn có trách nhiệm..."
 ```
 
-**Cấm:** Ẩn dụ quá xa vời. Nếu phải giải thích ẩn dụ thì nó không hiệu quả.
+**Cấm:** Ẩn dụ quá xa vời, thay bằng chứng hoặc được kéo dài chỉ để tạo callback. Nếu phải giải thích ẩn dụ thì nó không hiệu quả.
 
 ---
 
@@ -54,6 +56,6 @@ Càng dùng AI nhiều → năng lực tự thân càng yếu
 
 ## Checklist
 
-- [ ] Ẩn dụ tự giải thích, không cần chú thích?
+- [ ] Nếu có ẩn dụ, nó thêm hiểu biết và tự giải thích, không cần chú thích?
 - [ ] Compounding → vấn đề nghe mang tính hệ thống?
 - [ ] Loop → chuỗi flow tự nhiên, ≤ 5 bước?
