@@ -1,265 +1,249 @@
-# Viết Pro 5.3.0
+# Viết Pro
 
-**Viết Pro** (`viet-pro`) là skill viết, biên tập, humanize, kiểm chứng và chuyển thể nội dung tiếng Việt cho Claude Code, OpenAI Codex, Google Antigravity và AgentKit.
+**Viết Pro** là một skill giúp trợ lý AI viết và biên tập tiếng Việt tự nhiên, đúng dữ kiện, đúng từng kênh đăng bài.
 
-Skill phù hợp với bài blog, nội dung SEO, LinkedIn, Facebook, Zalo, newsletter, bài chuyên môn và kịch bản video. Trong Codex, gọi trực tiếp bằng `$viet-pro`; hệ thống cũng có thể tự kích hoạt skill khi yêu cầu tập trung vào chất lượng nội dung tiếng Việt.
+Skill chạy được trong **Claude Code**, **OpenAI Codex** và **Google Antigravity**. Phiên bản hiện tại: **5.3.0**.
 
-## Điểm mới trong 5.3.0
+---
 
-- Có eval hành vi: 12 brief trong `tests/eval/cases.json` chạy qua Claude Code headless với chỉ viet-pro, chấm bằng kiểm tra tất định cùng một bước judge tùy chọn. Kết quả trên 5.2.1 được lưu làm baseline. Bản 5.3.0 không làm ca nào tụt từ pass xuống fail và sửa được đúng một ca nhắm tới (đổi mốc thời gian tương đối). Mỗi phiên bản mới chạy một lần với 12 ca, nên đây là tín hiệu để theo dõi, chưa phải bằng chứng thống kê.
-- CI trên GitHub Actions chạy `tests/run-all.sh` ở mỗi PR trên macOS và Linux.
-- `compare-preserved-content.mjs` báo MISMATCH khi từ đứng trước một số liệu bị đảo nghĩa (ví dụ tăng thành giảm), và báo REVIEW khi từ đó đổi theo cách khác. Script không còn coi việc đổi kiểu dấu ngoặc là đổi trích dẫn, trừ khi chạy với `--strict-quotes`, và không còn coi URL có dấu chấm cuối câu là URL khác.
-- SKILL.md cấm đổi mốc thời gian tương đối như "năm trước" thành năm cụ thể khi nguồn không ghi. Eval baseline đã bắt được lỗi này.
-- Các reference không còn tham chiếu gãy, không còn trần 300 dòng hay quy tắc "nâng cấp sau mỗi bài" mâu thuẫn với `development/lead.md`.
+## Viết Pro giúp bạn làm gì?
 
-## Điểm mới trong 5.2.1
+- **Viết bài mới:** blog, bài SEO, LinkedIn, Facebook, Zalo, newsletter, thread X, kịch bản video.
+- **Biên tập bản nháp:** câu chữ mượt hơn, bớt lủng củng, bớt "giọng dịch".
+- **Bớt giọng AI (humanize):** bỏ những kiểu câu sáo rỗng mà AI hay viết, như "Trong bối cảnh...", "Không phải X, mà là Y", "Và đó mới là điều đáng suy ngẫm".
+- **Giữ nguyên dữ kiện:** tên, số liệu, ngày, link và trích dẫn không bị đổi khi sửa bài.
+- **Chuyển thể nhiều kênh:** từ một bài gốc, viết lại cho LinkedIn, Facebook, Zalo... mà vẫn giữ cùng thông điệp và số liệu.
+- **Không bịa:** không tự thêm số liệu, nguồn hay câu trích dẫn. Claim chưa có nguồn sẽ được đánh dấu rõ.
 
-Bản vá 5.2.1 sửa trình cài đặt:
+---
 
-- cài cho Claude Code (`~/.claude/skills`), Codex (`~/.agents/skills`) và Antigravity (`~/.gemini/config/skills`), chỉ với các host có trên máy;
-- không xoá bản cũ mà chuyển vào `~/.viet-pro-backups/`;
-- tải đúng tag phiên bản và kiểm tra checksum từng file trước khi cài;
-- hướng dẫn chạy script trong SKILL.md dùng đường dẫn tương đối, chạy được trên mọi host.
+## Cài đặt trong 1 phút
 
-## Điểm mới trong 5.2.0
-
-Phiên bản 5.2.0 tích hợp Humanizer 3.0.0 thành module nội bộ của Viết Pro:
-
-- Việt hóa đủ 25 pattern Humanizer theo 5 nhóm;
-- rà Humanizer nhẹ sau mọi nội dung công khai;
-- hỗ trợ audit đầy đủ khi người dùng yêu cầu “humanize”, “bớt AI” hoặc “audit dấu hiệu AI”;
-- bảo toàn tên, số liệu, ngày, URL, trích dẫn, citation, thứ hạng, quan điểm và CTA được yêu cầu;
-- không sửa code, frontmatter, lệnh, dữ liệu có cấu trúc hoặc đích URL khi biên tập file;
-- giảm phụ thuộc vào hook kịch tính, one-liner, CAPS, ẩn dụ và tỷ lệ đoạn 70-20-10;
-- bổ sung linter và công cụ đối chiếu dữ kiện trước/sau.
-
-Humanizer là phương pháp biên tập, không phải công cụ xác định văn bản do AI hay con người viết. Viết Pro không xóa máy móc mọi câu ngắn, dấu gạch ngang, phép đối lập hoặc ẩn dụ; chúng được giữ khi có ích hoặc phù hợp giọng mẫu.
-
-## Cách gọi nhanh
-
-Trong OpenAI Codex:
-
-```text
-$viet-pro Viết một bài LinkedIn 800 chữ về AI trong đào tạo nội bộ.
-Độc giả là founder công nghệ Việt Nam.
-Giọng chuyên nghiệp, rõ ràng, không phô trương.
-Giữ nguyên toàn bộ số liệu và URL.
-Không thêm CTA bán hàng.
-```
-
-Trong Claude Code, Google Antigravity hoặc AgentKit:
-
-```text
-Dùng skill viet-pro viết một bài LinkedIn 800 chữ về AI trong đào tạo nội bộ.
-```
-
-Viết Pro hỗ trợ kích hoạt tự nhiên. Bạn không bắt buộc phải gõ tên skill nếu yêu cầu đã thể hiện rõ nhu cầu viết, biên tập, kiểm chứng hoặc chuyển thể nội dung tiếng Việt.
-
-## Quy trình hoạt động
-
-Viết Pro không áp một dây chuyền cố định cho mọi yêu cầu. Skill đọc brief, chọn mức vận hành phù hợp rồi chỉ tải những reference cần thiết.
-
-```text
-Yêu cầu + tài liệu nguồn
-        ↓
-Chốt brief và phần phải bảo toàn
-        ↓
-Chọn mức Nhanh / Chuẩn / Tòa soạn
-        ↓
-Nghiên cứu hoặc kiểm chứng khi cần
-        ↓
-Soạn hay biên tập theo loại nội dung
-        ↓
-Rà ý nghĩa → dữ kiện → tiếng Việt → yêu cầu kênh
-        ↓
-Humanizer → đối chiếu dữ kiện trước/sau
-        ↓
-Bản cuối + cảnh báo claim thật sự cần thiết
-```
-
-### Bước 1 - Chốt brief
-
-Skill xác định từ yêu cầu và tài liệu sẵn có:
-
-- mục tiêu truyền thông;
-- độc giả và kênh xuất bản;
-- độ dài, giọng điệu và ngôi xưng;
-- thông điệp cốt lõi;
-- tên, số liệu, ngày, URL, quote và thuật ngữ phải giữ nguyên;
-- yêu cầu về nguồn, CTA và định dạng bàn giao.
-
-Nếu thiếu một chi tiết có thể suy ra an toàn, skill nêu giả định ngắn rồi tiếp tục. Skill chỉ hỏi lại khi lựa chọn còn thiếu có thể làm thay đổi đáng kể sản phẩm.
-
-### Bước 2 - Chọn mức vận hành
-
-| Mức | Dùng khi | Cách xử lý |
-|-----|----------|------------|
-| **Nhanh** | Chỉnh sửa, viết lại hoặc nội dung ngắn đã đủ dữ kiện | Soạn và tự rà trong cùng lượt |
-| **Chuẩn** | Bài mới, bài dài vừa phải hoặc một phiên bản theo kênh | Brief → soạn → kiểm chứng → Humanizer → bản cuối |
-| **Tòa soạn** | Nghiên cứu đáng kể, nội dung nhạy cảm, bài phức tạp hoặc nhiều kênh | Tách phần việc độc lập, lưu bằng chứng và kiểm tra kỹ trước khi bàn giao |
-
-Người dùng không cần tự chọn mức. Có thể chỉ định rõ nếu muốn kiểm soát quy trình, ví dụ: `Làm ở mức Nhanh, không nghiên cứu web`.
-
-### Bước 3 - Chọn reference theo nhiệm vụ
-
-Skill dùng progressive disclosure, không nạp toàn bộ tài liệu trong mọi lượt:
-
-- nghiên cứu và phân tích: `references/research/`;
-- storytelling, blog hoặc phản bác: `references/editorial/`;
-- định dạng LinkedIn, Facebook, newsletter, video và các kênh khác: `references/publishing/`;
-- ngôn ngữ, dữ kiện và Humanizer: `references/review/`;
-- nâng cấp chính skill: `references/development/`.
-
-Tài liệu kỹ thuật dùng bộ quy tắc riêng, ưu tiên cấu trúc và độ chính xác. Storytelling chỉ dùng ẩn dụ, lật góc hoặc nhấn mạnh khi brief thực sự cần.
-
-### Bước 4 - Nghiên cứu và kiểm chứng
-
-Khi claim có thể thay đổi, thuộc lĩnh vực ngách, nhạy cảm hoặc được yêu cầu dẫn nguồn, Viết Pro tra cứu nguồn hiện hành thay vì dựa vào trí nhớ.
-
-Skill ưu tiên nguồn gốc hoặc nguồn chính thức, đặt citation gần claim được hỗ trợ và phân biệt rõ:
-
-- dữ kiện đã xác minh;
-- suy luận hợp lý;
-- claim chưa đủ bằng chứng.
-
-Skill không bịa số liệu, nguồn, trích dẫn, nhân vật, trải nghiệm hoặc kết quả.
-
-### Bước 5 - Soạn hoặc biên tập
-
-Bản thảo được xây theo brief và yêu cầu kênh. Viết Pro giữ thông điệp, logic và dữ kiện giữa các phiên bản, nhưng có thể thay hook, nhịp, độ dài và cách trình bày để phù hợp từng nền tảng.
-
-Thứ tự ưu tiên khi các hướng dẫn phong cách xung đột:
-
-1. brief và giọng mẫu;
-2. tính toàn vẹn dữ kiện và an toàn;
-3. yêu cầu của kênh xuất bản;
-4. Humanizer;
-5. house style của Viết Pro.
-
-Vì vậy, một CTA do brief yêu cầu không bị xóa chỉ vì mang tính marketing; một dấu gạch ngang trong giọng mẫu cũng không bị thay máy móc.
-
-### Bước 6 - Humanizer
-
-Mọi văn xuôi công khai đều chạy kiểm tra nhẹ. Skill tìm các dấu hiệu rõ như:
-
-- lời thoại chatbot còn sót;
-- mở bài dàn cảnh quá lâu;
-- lặp công thức “không phải X, mà là Y”;
-- nhãn bold dùng để trang trí;
-- câu kết kịch tính nhưng không thêm thông tin;
-- nhiều pattern yếu tụ trong cùng đoạn.
-
-Khi người dùng yêu cầu audit, skill đọc đủ [25 pattern Humanizer](skills/viet-pro/references/review/humanizer-patterns.md) và trả thêm:
-
-1. pattern tìm thấy;
-2. đoạn liên quan;
-3. lý do sửa;
-4. nguy cơ mất dữ kiện;
-5. bản cuối.
-
-Ở chế độ mặc định, phần audit được ẩn. Người dùng chỉ nhận bản cuối đã humanize cùng những cảnh báo dữ kiện thật sự cần thiết.
-
-### Bước 7 - Đối chiếu và bàn giao
-
-Sau khi sửa, skill so bản trước và sau để bảo đảm không làm mất hoặc thay đổi:
-
-- tên riêng và chuỗi cố định;
-- số liệu, tỷ lệ, đơn vị và ngày;
-- URL và đích liên kết;
-- quote, citation và thứ hạng;
-- quan điểm, CTA và quan hệ thời gian trong nguồn.
-
-“Bản cuối” hoặc “sẵn sàng đăng” chỉ xác nhận chất lượng nội dung. Viết Pro không tự đăng bài, gửi email hoặc thay đổi hệ thống bên ngoài nếu người dùng chưa yêu cầu rõ hành động đó.
-
-## Ví dụ sử dụng
-
-### Viết bài mới
-
-```text
-$viet-pro Viết bài blog 1.500 chữ về cách xây dựng đội ngũ AI cho doanh nghiệp SME.
-Độc giả chưa có nền tảng kỹ thuật. Dùng ví dụ Việt Nam.
-Kết bài bằng checklist 5 bước, không dùng CTA bán hàng.
-```
-
-### Biên tập và bảo toàn dữ kiện
-
-```text
-$viet-pro Biên tập bản nháp đính kèm cho tự nhiên và mạch lạc hơn.
-Không đổi tên riêng, số liệu, ngày, URL, trích dẫn và lập luận chính.
-Đánh dấu riêng những claim chưa đủ nguồn.
-```
-
-### Audit dấu hiệu AI
-
-```text
-$viet-pro Audit dấu hiệu AI trong bài này rồi humanize.
-Nêu pattern, đoạn liên quan, lý do sửa và nguy cơ mất dữ kiện.
-Giữ nguyên toàn bộ số liệu, URL, quote, citation và CTA.
-Sau phần audit, trả bản cuối hoàn chỉnh.
-```
-
-### Chuyển thể đa kênh
-
-```text
-$viet-pro Từ bài gốc này, tạo một bài LinkedIn, một bài Facebook cá nhân
-và một newsletter. Giữ cùng luận điểm và số liệu nhưng viết lại cho từng kênh.
-```
-
-## Cấu trúc repository
-
-```text
-skills/viet-pro/
-├── SKILL.md
-├── THIRD_PARTY_NOTICES.md
-├── agents/openai.yaml
-├── references/
-│   ├── research/
-│   ├── editorial/
-│   ├── publishing/
-│   ├── review/
-│   └── development/
-└── scripts/
-    ├── lint-vietnamese-content.mjs
-    ├── compare-preserved-content.mjs
-    └── test-humanizer-contract.mjs
-```
-
-## Cài đặt
-
-Cài tự động cho mọi host có trên máy (Claude Code, Codex, Antigravity):
+Mở **Terminal** và dán lệnh sau:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.3.0/install.sh | bash
 ```
 
-Bản cũ được chuyển vào `~/.viet-pro-backups/` chứ không bị xoá. Mở phiên mới rồi gọi `/viet-pro` (Claude Code, Antigravity) hoặc `$viet-pro` (Codex). Tuỳ chọn chọn host, cài theo dự án, symlink và kiểm tra checksum xem tại [INSTALL.md](INSTALL.md).
+Lệnh này tự làm ba việc:
 
-## Kiểm thử
+1. Tìm xem máy bạn có Claude Code, Codex hay Antigravity.
+2. Cài Viết Pro cho từng công cụ tìm thấy.
+3. Nếu máy đã có bản cũ, chuyển bản cũ sang thư mục `~/.viet-pro-backups/` chứ không xoá.
 
-Các kiểm tra tất định (không cần mạng hay LLM), chạy ở mỗi PR trên GitHub Actions với macOS và Linux:
+Sau khi cài, **mở một phiên làm việc mới** trong công cụ của bạn là dùng được.
+
+> Cần có `git` và `bash` (đã có sẵn trên macOS và Linux). Trên Windows, installer chưa được kiểm thử; hãy làm theo cách cài thủ công trong [INSTALL.md](INSTALL.md).
+
+Muốn chỉ cài cho một công cụ, cài riêng cho một dự án, hoặc tự kiểm tra checksum? Xem [INSTALL.md](INSTALL.md).
+
+---
+
+## Cách dùng
+
+### Gọi skill
+
+| Công cụ | Cách gọi |
+| :--- | :--- |
+| Claude Code | Gõ `/viet-pro` rồi viết yêu cầu |
+| OpenAI Codex | Gõ `$viet-pro` rồi viết yêu cầu |
+| Google Antigravity | Gõ `/viet-pro` rồi viết yêu cầu |
+
+Bạn cũng có thể **không cần gõ tên skill**. Nếu yêu cầu của bạn rõ ràng là viết hoặc sửa nội dung tiếng Việt, trợ lý sẽ tự dùng Viết Pro.
+
+### Ví dụ yêu cầu
+
+**Viết bài mới**
+
+```text
+/viet-pro Viết bài LinkedIn khoảng 300 chữ về việc công ty tôi dùng AI để đào tạo nhân viên mới.
+Độc giả là founder công nghệ. Giọng chuyên nghiệp, không phô trương.
+Số liệu: khóa học 6 tuần, 62% nhân viên hoàn thành. Không dùng hashtag.
+```
+
+**Sửa bản nháp cho tự nhiên**
+
+```text
+/viet-pro Biên tập bản nháp dưới đây cho tự nhiên và dễ đọc hơn.
+Giữ nguyên tên, số liệu, ngày và link.
+[dán bản nháp vào đây]
+```
+
+**Bớt giọng AI**
+
+```text
+/viet-pro Humanize bài Facebook này, bớt dấu hiệu AI nhưng giữ giọng thân thiện.
+[dán bài vào đây]
+```
+
+Muốn xem skill đã sửa những gì, hãy nói thêm *"audit dấu hiệu AI"*. Skill sẽ liệt kê từng lỗi, chỉ ra đoạn có lỗi, giải thích lý do sửa, rồi mới đưa bản cuối.
+
+**Một bài, nhiều kênh**
+
+```text
+/viet-pro Từ bài gốc này, viết một bài LinkedIn và một tin Zalo dưới 80 chữ.
+Hai bản phải dùng cùng số liệu.
+[dán bài gốc vào đây]
+```
+
+### Mẹo để có bài tốt hơn
+
+Yêu cầu càng rõ, bài càng sát ý bạn. Một yêu cầu tốt thường có:
+
+1. **Viết cho ai** (độc giả là ai).
+2. **Đăng ở đâu** (LinkedIn, Facebook, blog...).
+3. **Dài khoảng bao nhiêu.**
+4. **Giọng văn** (trang trọng, thân thiện, hài hước...).
+5. **Dữ kiện phải giữ nguyên** (số liệu, tên, link).
+
+Thiếu chi tiết nhỏ cũng không sao: skill sẽ tự giả định hợp lý và nói rõ đã giả định gì. Skill chỉ hỏi lại khi thiếu thông tin quan trọng.
+
+---
+
+## Viết Pro xử lý yêu cầu thế nào?
+
+```text
+Đọc yêu cầu  →  Xác định dữ kiện phải giữ  →  Viết hoặc sửa
+      →  Rà lại tiếng Việt và dữ kiện  →  Bớt giọng AI  →  Trả bản cuối
+```
+
+- **Việc đơn giản** (sửa một đoạn ngắn): làm và tự rà ngay trong một lượt.
+- **Việc vừa** (một bài mới): viết, kiểm tra dữ kiện, chỉnh giọng, rồi trả bài.
+- **Việc lớn** (nhiều kênh, cần tra cứu): chia nhỏ từng phần và kiểm tra kỹ trước khi giao.
+
+Bạn không cần chọn mức nào cả, skill tự quyết theo yêu cầu.
+
+---
+
+## Viết Pro cam kết
+
+- **Không bịa** số liệu, nguồn, trích dẫn, nhân vật hay trải nghiệm.
+- **Không đổi dữ kiện** khi sửa bài: tên, số, ngày, link, trích dẫn được giữ nguyên. Skill cũng không đổi "năm trước" thành một năm cụ thể nếu nguồn không ghi.
+- **Không sửa code** hay phần cấu hình trong file; chỉ sửa phần văn xuôi.
+- **Không tự đăng bài**, gửi email hay nhắn tin. "Sẵn sàng đăng" chỉ có nghĩa là nội dung đã xong.
+- **Tôn trọng giọng của bạn:** nếu bạn đưa bài mẫu, skill bám theo giọng đó thay vì ép về một khuôn chung.
+
+---
+
+## Câu hỏi thường gặp
+
+**Viết Pro có phát hiện được văn do AI viết không?**
+Không. Viết Pro chỉ giúp bài viết tự nhiên hơn. Các dấu hiệu nó tìm là thói quen viết hay gặp, không phải bằng chứng bài do AI viết.
+
+**Làm sao cập nhật lên bản mới?**
+Chạy lại lệnh cài đặt ở trên với số phiên bản mới. Bản cũ sẽ được chuyển vào `~/.viet-pro-backups/`.
+
+**Bản cũ của tôi nằm ở đâu?**
+Trong `~/.viet-pro-backups/<thời-gian-cài>/`. Bạn có thể xoá thư mục này khi không cần nữa.
+
+**Làm sao gỡ cài đặt?**
+Xoá thư mục `viet-pro` trong thư mục skill của công cụ bạn dùng:
+
+```bash
+rm -rf ~/.claude/skills/viet-pro ~/.agents/skills/viet-pro ~/.gemini/config/skills/viet-pro
+```
+
+**Tôi chỉ muốn dùng cho một dự án, không cài cho cả máy?**
+Mở Terminal tại thư mục dự án, rồi chạy:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.3.0/install.sh | bash -s -- --workspace
+```
+
+**Skill có tự tra cứu web không?**
+Có, khi bài cần số liệu mới, thông tin chuyên ngành hoặc bạn yêu cầu dẫn nguồn. Nếu không muốn, hãy ghi "không tra cứu web" trong yêu cầu.
+
+---
+
+## Dành cho người đóng góp
+
+<details>
+<summary>Cấu trúc repository, kiểm thử và eval</summary>
+
+### Cấu trúc
+
+```text
+skills/viet-pro/              skill (đây là phần được cài lên máy người dùng)
+├── SKILL.md                  hướng dẫn chính, trợ lý đọc file này đầu tiên
+├── agents/openai.yaml        cấu hình hiển thị cho Codex
+├── references/               hướng dẫn chi tiết, chỉ đọc khi cần
+│   ├── research/             nghiên cứu, phân tích
+│   ├── editorial/            kỹ thuật viết
+│   ├── publishing/           định dạng từng kênh
+│   ├── review/               rà tiếng Việt, dữ kiện, humanize
+│   ├── archive/              mẫu cấu trúc bài
+│   └── development/          nâng cấp chính skill
+└── scripts/
+    ├── lint-vietnamese-content.mjs     kiểm tra lỗi trình bày tiếng Việt
+    ├── compare-preserved-content.mjs   so dữ kiện trước/sau khi sửa
+    └── test-humanizer-contract.mjs     kiểm tra hướng dẫn Humanizer
+install.sh                    trình cài đặt
+tests/                        kiểm thử và eval
+```
+
+### Chạy kiểm thử
+
+Các kiểm tra không cần mạng hay LLM. Lệnh này cũng tự chạy ở mỗi PR trên GitHub Actions, với macOS và Linux:
 
 ```bash
 bash tests/run-all.sh
 ```
 
-Lệnh này gồm self-test của ba script, lint các fixture, đối chiếu dữ kiện trước/sau, kiểm tra tham chiếu trong skill, manifest checksum, phiên bản giữa SKILL.md và `install.sh`, và bộ kiểm thử installer.
+### Eval chất lượng bài viết
 
-Eval hành vi chạy từng brief trong `tests/eval/cases.json` qua Claude Code headless, chỉ cài viet-pro, rồi chấm bằng kiểm tra tất định và một bước judge tùy chọn:
+Eval đưa 12 yêu cầu mẫu trong `tests/eval/cases.json` cho Claude Code chạy với Viết Pro, rồi chấm kết quả. Các kiểm tra tự động quyết định đạt hay không (giữ dữ kiện, không lỗi lint, đúng độ dài...); điểm do LLM chấm chỉ để tham khảo.
 
 ```bash
 node tests/eval/run-eval.mjs --judge --compare tests/eval/baseline.json
 ```
 
-Kết quả tất định quyết định pass/fail; điểm judge chỉ để theo dõi xu hướng. Workflow `eval` chạy hằng đêm hoặc thủ công khi repository có secret `ANTHROPIC_API_KEY`, không có thì bỏ qua. Mỗi lần chạy eval tốn quota hoặc chi phí API, khoảng 0,3-0,5 USD mỗi ca khi bật judge.
+- Bản 5.2.1 (baseline): 11/12 ca đạt.
+- Bản 5.3.0: 12/12 ca đạt, không ca nào tụt hạng.
 
-Kiểm tra metadata skill bằng `quick_validate.py` từ skill `skill-creator` của Codex.
+Mỗi bản chỉ chạy một lần, nên con số này là tín hiệu để theo dõi, chưa phải bằng chứng thống kê. Mỗi lần chạy eval tốn khoảng 0,3-0,5 USD cho mỗi ca khi bật judge. Workflow `eval` trên GitHub chỉ chạy khi repository có secret `ANTHROPIC_API_KEY`.
 
-## Phát hành 5.3.0
+Khi sửa nội dung skill, hãy sinh lại `SKILL_SHA256SUMS` theo [INSTALL.md](INSTALL.md) mục 5.
 
-- Source: [`skills/viet-pro`](skills/viet-pro)
-- Gói Universal: [`dist/viet-pro-5.3.0.zip`](dist/viet-pro-5.3.0.zip)
-- SHA-256: [`SHA256SUMS`](SHA256SUMS)
-- Checksum từng file của skill: [`SKILL_SHA256SUMS`](SKILL_SHA256SUMS)
-- Giấy phép bên thứ ba: [`THIRD_PARTY_NOTICES.md`](skills/viet-pro/THIRD_PARTY_NOTICES.md)
+</details>
 
-Humanizer 3.0.0 được phân phối theo giấy phép MIT và được tích hợp nội bộ; không có lệnh `$humanizer` riêng.
+---
+
+## Lịch sử phiên bản
+
+<details>
+<summary>5.3.0: Đo được chất lượng bài viết</summary>
+
+- Thêm eval 12 ca và kiểm thử tự động trên GitHub Actions.
+- Bộ so dữ kiện bắt được lỗi đảo nghĩa như "tăng 12%" thành "giảm 12%".
+- Không còn báo nhầm khi chỉ đổi kiểu dấu ngoặc kép, trừ khi bạn yêu cầu giữ nguyên kiểu dấu (`--strict-quotes`).
+- Không còn báo nhầm khi link có dấu chấm cuối câu.
+- Cấm đổi mốc thời gian tương đối ("năm trước") thành năm cụ thể khi nguồn không ghi.
+- Sửa các tham chiếu bị gãy và các quy tắc mâu thuẫn trong tài liệu nội bộ.
+
+</details>
+
+<details>
+<summary>5.2.1: Trình cài đặt an toàn hơn</summary>
+
+- Cài cho Claude Code, Codex và Antigravity, đúng thư mục mà từng công cụ đọc.
+- Không xoá bản cũ, mà chuyển vào `~/.viet-pro-backups/`.
+- Tải đúng phiên bản đã ghim và kiểm tra checksum trước khi cài.
+
+</details>
+
+<details>
+<summary>5.2.0: Tích hợp Humanizer</summary>
+
+- Việt hoá 25 dấu hiệu văn AI từ Humanizer 3.0.0.
+- Mọi bài công khai đều được rà nhẹ; rà đầy đủ khi bạn yêu cầu "humanize" hoặc "audit dấu hiệu AI".
+- Thêm công cụ kiểm tra lỗi trình bày và công cụ so dữ kiện trước/sau.
+
+</details>
+
+Các bản phát hành và file zip: [GitHub Releases](https://github.com/abm-dungtq/viet-pro-codex/releases).
+
+---
+
+## Giấy phép
+
+Humanizer 3.0.0 được dùng theo giấy phép MIT, chi tiết trong [THIRD_PARTY_NOTICES.md](skills/viet-pro/THIRD_PARTY_NOTICES.md).
