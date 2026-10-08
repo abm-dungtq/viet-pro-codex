@@ -1,89 +1,88 @@
-# Hướng dẫn cài đặt Viết Pro (Universal: Antigravity + Codex)
+# Hướng dẫn cài đặt Viết Pro
 
-Gói này chứa bản Universal của `viet-pro`, sẵn sàng hoạt động trên **Google Antigravity (AGY)**, **AgentKit**, **Claude** và **OpenAI Codex**:
-
-```text
-skills/viet-pro/              nguồn skill chuẩn (SKILL.md, references/, scripts/)
-dist/viet-pro-5.2.0.zip       gói phát hành Universal
-```
-
----
-
-## 1. Cài đặt tự động (One-liner - Khuyến nghị)
-
-Cài đặt ngay lập tức chỉ với một lệnh:
-
-```bash
-# Tải và cài đặt tự động từ GitHub:
-curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/main/install.sh | bash
-
-# Hoặc nếu đã clone repo về máy:
-./install.sh --agy --link
-```
-
----
-
-## 2. Cài đặt thủ công cho Google Antigravity (AGY) / AgentKit
-
-### Cách A: Cài đặt toàn cục (Global)
-Áp dụng cho mọi workspace và dự án trên máy:
-
-```bash
-# Tạo thư mục nếu chưa có
-mkdir -p ~/.gemini/config/skills
-
-# Khuyến nghị tạo symlink để tự động đồng bộ khi cập nhật repo:
-ln -s "$(pwd)/skills/viet-pro" ~/.gemini/config/skills/viet-pro
-
-# Hoặc sao chép thư mục:
-# cp -R skills/viet-pro ~/.gemini/config/skills/viet-pro
-```
-
-### Cách B: Cài đặt theo từng dự án (Project Workspace)
-Chỉ áp dụng cho dự án hiện tại (được quản lý qua Git của dự án):
-
-```bash
-mkdir -p .agents/skills
-cp -R skills/viet-pro .agents/skills/viet-pro
-```
-
-### Cách kích hoạt trong Antigravity:
-- **Tự nhiên (Natural Language):** Antigravity tự động nhận diện và kích hoạt `viet-pro` khi yêu cầu của bạn tập trung vào viết, biên tập, kiểm chứng thông tin hoặc chuyển thể nội dung tiếng Việt.
-- **Trực tiếp:** Gọi `/viet-pro` hoặc đính kèm prompt:
-  ```text
-  Dùng skill viet-pro để viết một bài phân tích chuyên sâu về thị trường SaaS Việt Nam...
-  ```
-
----
-
-## 3. Cài đặt cho OpenAI Codex
-
-Sao chép thư mục `skills/viet-pro` vào thư mục skill của Codex:
-
-```bash
-cp -R skills/viet-pro "${CODEX_HOME:-$HOME/.codex}/skills/viet-pro"
-```
-
-Khởi động một lượt Codex mới, sau đó gọi trực tiếp:
+Viết Pro (`viet-pro`) chạy trên **Claude Code**, **OpenAI Codex** và **Google Antigravity**. AgentKit dùng chung thư mục skill của các host này.
 
 ```text
-$viet-pro Viết một bài LinkedIn tiếng Việt theo brief sau...
-```
-
-*(Tệp `skills/viet-pro/agents/openai.yaml` đã được tích hợp sẵn để Codex tự động nạp giao diện và nhận diện lệnh).*
-
-Nếu đang nâng cấp một bản cài theo chế độ copy, nên sao lưu thư mục `viet-pro` hiện tại rồi thay toàn bộ thư mục bằng bản 5.2.0. Không trộn file của hai phiên bản. Có thể xác minh gói phát hành bằng:
-
-```bash
-shasum -a 256 -c SHA256SUMS
-unzip -t dist/viet-pro-5.2.0.zip
+skills/viet-pro/          nguồn skill chuẩn (SKILL.md, references/, scripts/)
+SKILL_SHA256SUMS          checksum từng file của skill, installer dùng để kiểm tra
+dist/viet-pro-5.2.1.zip   gói phát hành
+SHA256SUMS                checksum các gói zip
 ```
 
 ---
 
-## 4. Kiểm tra cài đặt & Linter
+## 1. Cài tự động (khuyến nghị)
 
-Chạy bộ tự kiểm tra của linter tiếng Việt tích hợp sẵn:
+```bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash
+```
+
+Lệnh trên tải đúng tag `v5.2.1`, kiểm tra checksum của skill, rồi cài cho mọi host phát hiện được trên máy (dựa vào sự tồn tại của `~/.claude`, `~/.agents` hoặc `~/.codex`, và `~/.gemini`).
+
+Chỉ định host hoặc tuỳ chọn khác bằng cách thêm tham số sau `bash -s --`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash -s -- --claude --codex
+```
+
+| Tuỳ chọn | Tác dụng |
+| :--- | :--- |
+| `--claude` | Cài vào `~/.claude/skills/viet-pro` |
+| `--codex` | Cài vào `~/.agents/skills/viet-pro` |
+| `--agy`, `--antigravity` | Cài vào `~/.gemini/config/skills/viet-pro` (Antigravity app và IDE) |
+| `--agy-cli` | Cài thêm vào `~/.gemini/antigravity-cli/skills/viet-pro` (Antigravity CLI) |
+| `--all` | Cài cho mọi host phát hiện được (mặc định) |
+| `--workspace`, `-w` | Cài vào dự án hiện tại: `.agents/skills/viet-pro` và `.claude/skills/viet-pro` |
+| `--link`, `-l` | Tạo symlink thay vì copy (chỉ khi chạy `./install.sh` từ repo đã clone) |
+| `--ref <tag>` | Cài một tag khác, ví dụ `--ref v5.2.1` |
+
+Nếu đã clone repo, chạy trực tiếp:
+
+```bash
+./install.sh --claude --link
+```
+
+### Bản cũ được giữ lại
+
+Installer không xoá bản cài trước. Mỗi lần cài, bản cũ được chuyển vào `~/.viet-pro-backups/<thời-gian>-<pid>/`, nằm ngoài thư mục skill để host không nạp nhầm hai bản. Xoá thư mục này khi không cần nữa.
+
+Bản cài ở đường dẫn Codex cũ `~/.codex/skills/viet-pro` cũng được chuyển vào đó, với nhãn `codex-legacy`, vì Codex hiện đọc skill của người dùng từ `~/.agents/skills`. Nếu bạn dùng Codex bản rất cũ chỉ đọc `~/.codex/skills`, hãy cập nhật Codex, hoặc chuyển thư mục `codex-legacy` về chỗ cũ.
+
+---
+
+## 2. Cài thủ công
+
+Sao chép thư mục `skills/viet-pro` vào đúng chỗ của host. Nếu đã có bản cũ, chuyển bản cũ ra ngoài thư mục skill trước, không trộn file của hai phiên bản.
+
+| Host | Toàn máy | Theo dự án |
+| :--- | :--- | :--- |
+| Claude Code | `~/.claude/skills/viet-pro` | `.claude/skills/viet-pro` |
+| OpenAI Codex | `~/.agents/skills/viet-pro` | `.agents/skills/viet-pro` |
+| Antigravity app/IDE | `~/.gemini/config/skills/viet-pro` | `.agents/skills/viet-pro` |
+| Antigravity CLI | `~/.gemini/antigravity-cli/skills/viet-pro` | `.agents/skills/viet-pro` |
+
+Ví dụ cho Claude Code:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/viet-pro ~/.claude/skills/viet-pro
+```
+
+---
+
+## 3. Cách gọi
+
+| Host | Cách gọi |
+| :--- | :--- |
+| Claude Code | `/viet-pro <yêu cầu>` hoặc mô tả yêu cầu viết tiếng Việt |
+| OpenAI Codex | `$viet-pro <yêu cầu>`; `agents/openai.yaml` cho phép kích hoạt tự nhiên |
+| Antigravity | `/viet-pro` hoặc mô tả yêu cầu tự nhiên |
+
+Mở phiên mới sau khi cài để host nạp skill.
+
+---
+
+## 4. Kiểm tra cài đặt
 
 ```bash
 node skills/viet-pro/scripts/lint-vietnamese-content.mjs --self-test
@@ -91,27 +90,29 @@ node skills/viet-pro/scripts/compare-preserved-content.mjs --self-test
 node skills/viet-pro/scripts/test-humanizer-contract.mjs
 ```
 
-Nếu muốn kiểm tra tính hợp lệ của tệp `SKILL.md`:
+Kiểm tra checksum khi đã clone repo:
 
 ```bash
-node -e "
-const fs = require('fs');
-const content = fs.readFileSync('skills/viet-pro/SKILL.md', 'utf8');
-if (!content.startsWith('---')) throw new Error('Invalid frontmatter');
-console.log('SKILL.md frontmatter verified!');
-"
+shasum -a 256 -c SKILL_SHA256SUMS
+shasum -a 256 -c SHA256SUMS
 ```
 
-Humanizer 3.0.0 được tích hợp nội bộ trong `$viet-pro`; không có lệnh `$humanizer` riêng. Thông báo MIT đầy đủ được phân phối tại `skills/viet-pro/THIRD_PARTY_NOTICES.md`.
+Trên Linux, thay `shasum -a 256` bằng `sha256sum`.
+
+Humanizer 3.0.0 được tích hợp nội bộ trong `viet-pro`; không có lệnh `$humanizer` riêng. Thông báo MIT đầy đủ nằm tại `skills/viet-pro/THIRD_PARTY_NOTICES.md`.
 
 ---
 
-## 5. Bảng đối chiếu giữa các môi trường
+## 5. Dành cho người bảo trì
 
-| Tiêu chí | Google Antigravity (AGY) | OpenAI Codex |
-| :--- | :--- | :--- |
-| **Vị trí cài đặt** | `~/.gemini/config/skills/viet-pro`<br>hoặc `.agents/skills/viet-pro` | `~/.codex/skills/viet-pro` |
-| **Cú pháp gọi lệnh** | Kích hoạt tự nhiên hoặc `/viet-pro` | `$viet-pro <yêu cầu>` |
-| **Giao diện cấu hình** | Chuẩn Antigravity Progressive Disclosure | `agents/openai.yaml` |
-| **Lưu trữ sản phẩm** | AGY Markdown Artifacts / Workspace file | `content/{yymmdd}-{slug}/` |
-| **Linter tiếng Việt** | Chạy độc lập qua Node.js | Chạy độc lập qua Node.js |
+Mỗi lần phát hành phiên bản mới:
+
+1. Cập nhật `DEFAULT_REF` trong `install.sh` và các URL `vX.Y.Z` trong README.md và INSTALL.md.
+2. Sinh lại manifest sau mọi thay đổi trong `skills/viet-pro/`:
+
+   ```bash
+   find skills/viet-pro -type f ! -name .DS_Store | LC_ALL=C sort | xargs shasum -a 256 > SKILL_SHA256SUMS
+   ```
+
+3. Chạy `bash tests/install/test-install.sh .`, phải in `0 fail`.
+4. Gắn tag `vX.Y.Z` lên commit đã merge vào `main`, rồi thử lại lệnh cài tự động.
