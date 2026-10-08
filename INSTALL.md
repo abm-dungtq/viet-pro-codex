@@ -34,7 +34,7 @@ curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/in
 | `--all` | Cài cho mọi host phát hiện được (mặc định) |
 | `--workspace`, `-w` | Cài vào dự án hiện tại: `.agents/skills/viet-pro` và `.claude/skills/viet-pro` |
 | `--link`, `-l` | Tạo symlink thay vì copy (chỉ khi chạy `./install.sh` từ repo đã clone) |
-| `--ref <tag>` | Cài một tag khác, ví dụ `--ref v5.2.1` |
+| `--ref <tag>` | Cài một tag khác, ví dụ `--ref vX.Y.Z` |
 
 Nếu đã clone repo, chạy trực tiếp:
 
@@ -113,6 +113,8 @@ Mỗi lần phát hành phiên bản mới:
    ```bash
    find skills/viet-pro -type f ! -name .DS_Store | LC_ALL=C sort | xargs shasum -a 256 > SKILL_SHA256SUMS
    ```
+
+   Trên Linux, thay `shasum -a 256` bằng `sha256sum`.
 
 3. Chạy `bash tests/install/test-install.sh .`, phải in `0 fail`.
 4. Gắn tag `vX.Y.Z` lên commit đã merge vào `main`, rồi thử lại lệnh cài tự động.
