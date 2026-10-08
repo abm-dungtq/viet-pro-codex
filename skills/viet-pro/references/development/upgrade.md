@@ -7,9 +7,10 @@
 
 ## Khi Nào Gọi
 
-- Sau khi hoàn tất bài viết phức tạp và được user duyệt
+Chỉ dùng khi người dùng yêu cầu phân tích, sửa hoặc nâng cấp skill (xem `development/lead.md`). Không tự sửa skill sau mỗi bài.
+
 - Khi user yêu cầu: "phân tích bài viết này để cải tiến skill"
-- Khi phát hiện kỹ thuật/pattern lặp lại chưa được document
+- Khi phát hiện kỹ thuật/pattern lặp lại chưa được document: báo cho user và chỉ bổ sung sau khi user duyệt
 
 ---
 
@@ -77,8 +78,7 @@ Mỗi quy tắc phải có:
 
 ### Giới hạn kích thước module
 
-- Mỗi module KHÔNG vượt **300 dòng**
-- Nếu module sắp vượt → tách thành file mới
+- Không đặt trần số dòng cứng (xem `development/lead.md`). Tách module khi việc tách giúp giảm context phải nạp hoặc giúp tìm đúng hướng dẫn nhanh hơn
 - Tên file mới theo quy chuẩn: `[function].md` tiếng Anh
 - Cập nhật bảng nhân sự trong lead.md của ban + SKILL.md nếu ảnh hưởng routing
 
@@ -92,6 +92,7 @@ Mọi thay đổi ghi vào đây:
 
 | Ngày | Module | Thay đổi | Nguồn |
 |------|--------|----------|-------|
+| 2026-10-08 | `SKILL.md`, `scripts/compare-preserved-content.mjs`, `archive/lead.md`, `development/upgrade.md` | **Nâng cấp v5.3.0**: compare-preserved bắt đảo nghĩa quanh số liệu, chuẩn hoá kiểu dấu ngoặc (trừ `--strict-quotes`) và dấu câu cuối URL; cấm đổi mốc thời gian tương đối thành ngày cụ thể; sửa tham chiếu gãy và đồng bộ quy tắc phát triển với `development/lead.md`; thêm eval hành vi và CI ngoài skill | Eval baseline 5.2.1 |
 | 2026-10-08 | `SKILL.md`, `install.sh`, tài liệu phát hành | **Bản vá v5.2.1**: installer cài đúng đường dẫn Claude Code, Codex (`~/.agents/skills`) và Antigravity; sao lưu bản cũ thay vì xoá; ghim theo tag và kiểm tra `SKILL_SHA256SUMS`; hướng dẫn chạy script dùng đường dẫn tương đối tính từ thư mục skill | Phản biện nâng cấp skill |
 | 2026-09-10 | `SKILL.md`, `review/`, `editorial/`, `scripts/`, tài liệu phát hành | **Nâng cấp v5.2.0**: tích hợp 25 pattern Humanizer 3.0.0 cho tiếng Việt; thêm rà nhẹ mặc định, audit theo yêu cầu, bảo toàn dữ kiện, giảm các công thức hook/nhịp/kết bài và mở rộng linter | Humanizer 3.0.0 + kế hoạch người dùng duyệt |
 | 2026-09-05 | `SKILL.md`, `agents/openai.yaml` | **Bản vá v5.0.1**: chuẩn hóa tên hiển thị thành “Viết Pro”; tài liệu repository chuyển README thành hướng dẫn sử dụng và tách hướng dẫn cài đặt riêng | Phản hồi người dùng |

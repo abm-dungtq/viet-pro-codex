@@ -5,7 +5,7 @@ Viết Pro (`viet-pro`) chạy trên **Claude Code**, **OpenAI Codex** và **Goo
 ```text
 skills/viet-pro/          nguồn skill chuẩn (SKILL.md, references/, scripts/)
 SKILL_SHA256SUMS          checksum từng file của skill, installer dùng để kiểm tra
-dist/viet-pro-5.2.1.zip   gói phát hành
+dist/viet-pro-5.3.0.zip   gói phát hành
 SHA256SUMS                checksum các gói zip
 ```
 
@@ -14,15 +14,15 @@ SHA256SUMS                checksum các gói zip
 ## 1. Cài tự động (khuyến nghị)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.3.0/install.sh | bash
 ```
 
-Lệnh trên tải đúng tag `v5.2.1`, kiểm tra checksum của skill, rồi cài cho mọi host phát hiện được trên máy (dựa vào sự tồn tại của `~/.claude`, `~/.agents` hoặc `~/.codex`, và `~/.gemini`).
+Lệnh trên tải đúng tag `v5.3.0`, kiểm tra checksum của skill, rồi cài cho mọi host phát hiện được trên máy (dựa vào sự tồn tại của `~/.claude`, `~/.agents` hoặc `~/.codex`, và `~/.gemini`).
 
 Chỉ định host hoặc tuỳ chọn khác bằng cách thêm tham số sau `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash -s -- --claude --codex
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.3.0/install.sh | bash -s -- --claude --codex
 ```
 
 | Tuỳ chọn | Tác dụng |
@@ -116,5 +116,5 @@ Mỗi lần phát hành phiên bản mới:
 
    Trên Linux, thay `shasum -a 256` bằng `sha256sum`.
 
-3. Chạy `bash tests/install/test-install.sh .`, phải in `0 fail`.
+3. Chạy `bash tests/run-all.sh`, phải in `ALL CHECKS PASS`. Khi đổi nội dung skill, chạy thêm `node tests/eval/run-eval.mjs --judge --compare tests/eval/baseline.json` và không để ca nào tụt từ pass xuống fail.
 4. Gắn tag `vX.Y.Z` lên commit đã merge vào `main`, rồi thử lại lệnh cài tự động.

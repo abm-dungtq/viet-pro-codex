@@ -6,7 +6,7 @@
 
 ## Nhân sự
 
-Nhân viên của ban này là các bài mẫu đã duyệt, lưu trong `samples/`.
+Bài mẫu đã duyệt được lưu trong thư mục `samples/` cạnh file này. Bản phát hành chưa kèm bài mẫu nào; thư mục chỉ được tạo khi người dùng cho phép lưu bài mẫu đầu tiên. Khi chưa có, dùng `pattern-catalog.md`.
 
 **Quy ước lưu bài mẫu (`samples/`):**
 - Tên file: `{yymmdd}-{kênh}-{slug}.md` (vd `260707-facebook-debunk-anthropic.md`)
@@ -35,7 +35,7 @@ Khi được gọi:
 
 ## Khi nào tra cứu
 
-- TBT phân tích request (SKILL.md Bước 2, câu 6): đề bài tương tự bài mẫu nào?
+- Khi chốt brief (mục "Chốt brief vừa đủ" trong SKILL.md): đề bài có tương tự bài mẫu nào không?
 - Editorial nhận nhiệm vụ viết bài cùng loại → tra pattern-catalog tìm kỹ thuật phù hợp
 - Review cần đối chiếu → output đạt chất lượng bài mẫu chưa?
 

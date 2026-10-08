@@ -1,0 +1,1 @@
+Trong năm 2025, theo báo cáo thường niên mà chính công ty công bố, doanh thu của Hòa Phát Food đã có mức tăng 12% so với năm trước đó, và cũng trong cùng giai đoạn này thì chi phí vận hành của công ty lại ghi nhận mức giảm 5%, nhờ việc công ty chuyển sang sử dụng một nhà cung cấp bao bì mới.
