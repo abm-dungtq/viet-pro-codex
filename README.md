@@ -1,8 +1,17 @@
-# Viết Pro 5.2.0
+# Viết Pro 5.2.1
 
-**Viết Pro** (`viet-pro`) là skill viết, biên tập, humanize, kiểm chứng và chuyển thể nội dung tiếng Việt cho OpenAI Codex, Google Antigravity, AgentKit và Claude.
+**Viết Pro** (`viet-pro`) là skill viết, biên tập, humanize, kiểm chứng và chuyển thể nội dung tiếng Việt cho Claude Code, OpenAI Codex, Google Antigravity và AgentKit.
 
 Skill phù hợp với bài blog, nội dung SEO, LinkedIn, Facebook, Zalo, newsletter, bài chuyên môn và kịch bản video. Trong Codex, gọi trực tiếp bằng `$viet-pro`; hệ thống cũng có thể tự kích hoạt skill khi yêu cầu tập trung vào chất lượng nội dung tiếng Việt.
+
+## Điểm mới trong 5.2.1
+
+Bản vá 5.2.1 sửa trình cài đặt:
+
+- cài cho Claude Code (`~/.claude/skills`), Codex (`~/.agents/skills`) và Antigravity (`~/.gemini/config/skills`), chỉ với các host có trên máy;
+- không xoá bản cũ mà chuyển vào `~/.viet-pro-backups/`;
+- tải đúng tag phiên bản và kiểm tra checksum từng file trước khi cài;
+- hướng dẫn chạy script trong SKILL.md dùng đường dẫn tương đối, chạy được trên mọi host.
 
 ## Điểm mới trong 5.2.0
 
@@ -30,7 +39,7 @@ Giữ nguyên toàn bộ số liệu và URL.
 Không thêm CTA bán hàng.
 ```
 
-Trong Google Antigravity hoặc AgentKit:
+Trong Claude Code, Google Antigravity hoặc AgentKit:
 
 ```text
 Dùng skill viet-pro viết một bài LinkedIn 800 chữ về AI trong đào tạo nội bộ.
@@ -209,19 +218,13 @@ skills/viet-pro/
 
 ## Cài đặt
 
-Cài tự động:
+Cài tự động cho mọi host có trên máy (Claude Code, Codex, Antigravity):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash
 ```
 
-Cài thủ công cho Codex:
-
-```bash
-cp -R skills/viet-pro "${CODEX_HOME:-$HOME/.codex}/skills/viet-pro"
-```
-
-Khởi động một lượt Codex mới rồi gọi `$viet-pro`. Xem thêm các chế độ cài đặt, symlink và kiểm tra checksum tại [INSTALL.md](INSTALL.md).
+Bản cũ được chuyển vào `~/.viet-pro-backups/` chứ không bị xoá. Mở phiên mới rồi gọi `/viet-pro` (Claude Code, Antigravity) hoặc `$viet-pro` (Codex). Tuỳ chọn chọn host, cài theo dự án, symlink và kiểm tra checksum xem tại [INSTALL.md](INSTALL.md).
 
 ## Kiểm thử
 
@@ -229,15 +232,17 @@ Khởi động một lượt Codex mới rồi gọi `$viet-pro`. Xem thêm các
 node skills/viet-pro/scripts/lint-vietnamese-content.mjs --self-test
 node skills/viet-pro/scripts/compare-preserved-content.mjs --self-test
 node skills/viet-pro/scripts/test-humanizer-contract.mjs
+bash tests/install/test-install.sh .
 ```
 
 Kiểm tra metadata skill bằng `quick_validate.py` từ skill `skill-creator` của Codex.
 
-## Phát hành 5.2.0
+## Phát hành 5.2.1
 
 - Source: [`skills/viet-pro`](skills/viet-pro)
-- Gói Universal: [`dist/viet-pro-5.2.0.zip`](dist/viet-pro-5.2.0.zip)
+- Gói Universal: [`dist/viet-pro-5.2.1.zip`](dist/viet-pro-5.2.1.zip)
 - SHA-256: [`SHA256SUMS`](SHA256SUMS)
+- Checksum từng file của skill: [`SKILL_SHA256SUMS`](SKILL_SHA256SUMS)
 - Giấy phép bên thứ ba: [`THIRD_PARTY_NOTICES.md`](skills/viet-pro/THIRD_PARTY_NOTICES.md)
 
 Humanizer 3.0.0 được phân phối theo giấy phép MIT và được tích hợp nội bộ; không có lệnh `$humanizer` riêng.

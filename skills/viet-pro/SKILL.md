@@ -3,7 +3,7 @@ name: viet-pro
 description: "Viết, biên tập, humanize, audit dấu hiệu AI, kiểm chứng và chuyển thể nội dung tiếng Việt chuyên nghiệp cho bài dài, blog, SEO, mạng xã hội, newsletter và kịch bản video. Kích hoạt khi người dùng yêu cầu viết mới, biên tập, rà văn phong tiếng Việt, chống AI slop, kiểm chứng nguồn/claim hoặc định dạng xuất bản theo kênh; không dùng cho dịch ngắn hay chỉnh một câu đơn giản."
 metadata:
   author: ABM-DungTQ
-  version: "5.2.0"
+  version: "5.2.1"
   category: content
   keywords: [vietnamese, writing, editing, humanize, fact-check, publishing, content-engine]
 ---
@@ -88,11 +88,11 @@ Rà theo rủi ro, không dùng checklist như mục tiêu tự thân:
 
 Humanizer là quy trình biên tập, không phải công cụ xác định văn bản do AI hay con người viết. Pattern mạnh 1-5 có thể đáng sửa từ một lần xuất hiện nếu đúng ngữ cảnh; pattern yếu chỉ sửa khi lặp thành cụm hoặc làm giảm độ rõ. Khi sửa tệp, chỉ thay văn xuôi: giữ nguyên frontmatter, code, lệnh, dữ liệu có cấu trúc và đích URL. Nếu brief yêu cầu giữ nguyên quote/trích dẫn, bảo toàn cả nội dung lẫn kiểu dấu ngoặc bao quanh.
 
-Có thể chạy:
+Có thể chạy các script trong thư mục `scripts/` của skill. Đường dẫn `scripts/` tính từ thư mục chứa file SKILL.md này; trong Claude Code, thư mục đó là `${CLAUDE_SKILL_DIR}`.
 
 ```bash
-node {SKILL_DIR}/scripts/lint-vietnamese-content.mjs <file.md>
-node {SKILL_DIR}/scripts/compare-preserved-content.mjs <before.md> <after.md> --keep "Tên riêng"
+node <thư-mục-skill>/scripts/lint-vietnamese-content.mjs <file.md>
+node <thư-mục-skill>/scripts/compare-preserved-content.mjs <before.md> <after.md> --keep "Tên riêng"
 ```
 
 Lint chỉ là tín hiệu hỗ trợ. WARN không tự động làm bài thất bại; ERROR phải được xem trong ngữ cảnh. Yêu cầu phong cách rõ ràng của người dùng có thể override house style, nhưng không override lỗi sự thật hoặc an toàn.
