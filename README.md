@@ -6,7 +6,7 @@ Skill phù hợp với bài blog, nội dung SEO, LinkedIn, Facebook, Zalo, news
 
 ## Điểm mới trong 5.3.0
 
-- Có eval hành vi: 12 brief trong `tests/eval/cases.json` chạy qua Claude Code headless với chỉ viet-pro, chấm bằng kiểm tra tất định cùng một bước judge tùy chọn. Kết quả trên 5.2.1 được lưu làm baseline.
+- Có eval hành vi: 12 brief trong `tests/eval/cases.json` chạy qua Claude Code headless với chỉ viet-pro, chấm bằng kiểm tra tất định cùng một bước judge tùy chọn. Kết quả trên 5.2.1 được lưu làm baseline. Bản 5.3.0 không làm ca nào tụt từ pass xuống fail và sửa được đúng một ca nhắm tới (đổi mốc thời gian tương đối). Mỗi phiên bản mới chạy một lần với 12 ca, nên đây là tín hiệu để theo dõi, chưa phải bằng chứng thống kê.
 - CI trên GitHub Actions chạy `tests/run-all.sh` ở mỗi PR trên macOS và Linux.
 - `compare-preserved-content.mjs` báo MISMATCH khi từ đứng trước một số liệu bị đảo nghĩa (ví dụ tăng thành giảm), và báo REVIEW khi từ đó đổi theo cách khác. Script không còn coi việc đổi kiểu dấu ngoặc là đổi trích dẫn, trừ khi chạy với `--strict-quotes`, và không còn coi URL có dấu chấm cuối câu là URL khác.
 - SKILL.md cấm đổi mốc thời gian tương đối như "năm trước" thành năm cụ thể khi nguồn không ghi. Eval baseline đã bắt được lỗi này.
