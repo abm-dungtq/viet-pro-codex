@@ -3,7 +3,7 @@ name: viet-pro
 description: "Viết, biên tập, humanize, audit dấu hiệu AI, kiểm chứng và chuyển thể nội dung tiếng Việt chuyên nghiệp cho bài dài, blog, SEO, mạng xã hội, newsletter và kịch bản video. Kích hoạt khi người dùng yêu cầu viết mới, biên tập, rà văn phong tiếng Việt, chống AI slop, kiểm chứng nguồn/claim hoặc định dạng xuất bản theo kênh; không dùng cho dịch ngắn hay chỉnh một câu đơn giản."
 metadata:
   author: ABM-DungTQ
-  version: "5.2.1"
+  version: "5.3.0"
   category: content
   keywords: [vietnamese, writing, editing, humanize, fact-check, publishing, content-engine]
 ---
@@ -69,7 +69,7 @@ Chỉ đọc những phần cần cho yêu cầu hiện tại:
 
 ## Soạn và chuyển thể
 
-- Giữ nguyên chuỗi cố định, tên riêng, số liệu, URL và thông điệp mà người dùng yêu cầu bảo toàn.
+- Giữ nguyên chuỗi cố định, tên riêng, số liệu, URL và thông điệp mà người dùng yêu cầu bảo toàn. Không đổi mốc tương đối ("năm trước", "quý sau") thành ngày hay năm cụ thể nếu nguồn không ghi.
 - Tôn trọng voice mẫu nhưng không sao chép dài hoặc bắt chước danh tính tác giả đang sống. Trích dẫn phải ngắn và có nguồn khi cần.
 - Mỗi phiên bản theo kênh giữ thông điệp, logic và số liệu; được thay hook, nhịp, độ dài và CTA. `video-script` là chuyển thể sang văn nói, không chỉ đổi format.
 - Không tự thêm CTA bán hàng, hashtag, emoji hoặc ngôn ngữ phô trương nếu brief không cần.
@@ -92,7 +92,7 @@ Có thể chạy các script trong thư mục `scripts/` của skill. Đường 
 
 ```bash
 node <thư-mục-skill>/scripts/lint-vietnamese-content.mjs <file.md>
-node <thư-mục-skill>/scripts/compare-preserved-content.mjs <before.md> <after.md> --keep "Tên riêng"
+node <thư-mục-skill>/scripts/compare-preserved-content.mjs <before.md> <after.md> --keep "Tên riêng" [--strict-quotes]
 ```
 
 Lint chỉ là tín hiệu hỗ trợ. WARN không tự động làm bài thất bại; ERROR phải được xem trong ngữ cảnh. Yêu cầu phong cách rõ ràng của người dùng có thể override house style, nhưng không override lỗi sự thật hoặc an toàn.

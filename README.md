@@ -1,8 +1,16 @@
-# Viết Pro 5.2.1
+# Viết Pro 5.3.0
 
 **Viết Pro** (`viet-pro`) là skill viết, biên tập, humanize, kiểm chứng và chuyển thể nội dung tiếng Việt cho Claude Code, OpenAI Codex, Google Antigravity và AgentKit.
 
 Skill phù hợp với bài blog, nội dung SEO, LinkedIn, Facebook, Zalo, newsletter, bài chuyên môn và kịch bản video. Trong Codex, gọi trực tiếp bằng `$viet-pro`; hệ thống cũng có thể tự kích hoạt skill khi yêu cầu tập trung vào chất lượng nội dung tiếng Việt.
+
+## Điểm mới trong 5.3.0
+
+- Có eval hành vi: 12 brief trong `tests/eval/cases.json` chạy qua Claude Code headless với chỉ viet-pro, chấm bằng kiểm tra tất định cùng một bước judge tùy chọn. Kết quả trên 5.2.1 được lưu làm baseline. Bản 5.3.0 không làm ca nào tụt từ pass xuống fail và sửa được đúng một ca nhắm tới (đổi mốc thời gian tương đối). Mỗi phiên bản mới chạy một lần với 12 ca, nên đây là tín hiệu để theo dõi, chưa phải bằng chứng thống kê.
+- CI trên GitHub Actions chạy `tests/run-all.sh` ở mỗi PR trên macOS và Linux.
+- `compare-preserved-content.mjs` báo MISMATCH khi từ đứng trước một số liệu bị đảo nghĩa (ví dụ tăng thành giảm), và báo REVIEW khi từ đó đổi theo cách khác. Script không còn coi việc đổi kiểu dấu ngoặc là đổi trích dẫn, trừ khi chạy với `--strict-quotes`, và không còn coi URL có dấu chấm cuối câu là URL khác.
+- SKILL.md cấm đổi mốc thời gian tương đối như "năm trước" thành năm cụ thể khi nguồn không ghi. Eval baseline đã bắt được lỗi này.
+- Các reference không còn tham chiếu gãy, không còn trần 300 dòng hay quy tắc "nâng cấp sau mỗi bài" mâu thuẫn với `development/lead.md`.
 
 ## Điểm mới trong 5.2.1
 
@@ -221,26 +229,35 @@ skills/viet-pro/
 Cài tự động cho mọi host có trên máy (Claude Code, Codex, Antigravity):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.2.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/abm-dungtq/viet-pro-codex/v5.3.0/install.sh | bash
 ```
 
 Bản cũ được chuyển vào `~/.viet-pro-backups/` chứ không bị xoá. Mở phiên mới rồi gọi `/viet-pro` (Claude Code, Antigravity) hoặc `$viet-pro` (Codex). Tuỳ chọn chọn host, cài theo dự án, symlink và kiểm tra checksum xem tại [INSTALL.md](INSTALL.md).
 
 ## Kiểm thử
 
+Các kiểm tra tất định (không cần mạng hay LLM), chạy ở mỗi PR trên GitHub Actions với macOS và Linux:
+
 ```bash
-node skills/viet-pro/scripts/lint-vietnamese-content.mjs --self-test
-node skills/viet-pro/scripts/compare-preserved-content.mjs --self-test
-node skills/viet-pro/scripts/test-humanizer-contract.mjs
-bash tests/install/test-install.sh .
+bash tests/run-all.sh
 ```
+
+Lệnh này gồm self-test của ba script, lint các fixture, đối chiếu dữ kiện trước/sau, kiểm tra tham chiếu trong skill, manifest checksum, phiên bản giữa SKILL.md và `install.sh`, và bộ kiểm thử installer.
+
+Eval hành vi chạy từng brief trong `tests/eval/cases.json` qua Claude Code headless, chỉ cài viet-pro, rồi chấm bằng kiểm tra tất định và một bước judge tùy chọn:
+
+```bash
+node tests/eval/run-eval.mjs --judge --compare tests/eval/baseline.json
+```
+
+Kết quả tất định quyết định pass/fail; điểm judge chỉ để theo dõi xu hướng. Workflow `eval` chạy hằng đêm hoặc thủ công khi repository có secret `ANTHROPIC_API_KEY`, không có thì bỏ qua. Mỗi lần chạy eval tốn quota hoặc chi phí API, khoảng 0,3-0,5 USD mỗi ca khi bật judge.
 
 Kiểm tra metadata skill bằng `quick_validate.py` từ skill `skill-creator` của Codex.
 
-## Phát hành 5.2.1
+## Phát hành 5.3.0
 
 - Source: [`skills/viet-pro`](skills/viet-pro)
-- Gói Universal: [`dist/viet-pro-5.2.1.zip`](dist/viet-pro-5.2.1.zip)
+- Gói Universal: [`dist/viet-pro-5.3.0.zip`](dist/viet-pro-5.3.0.zip)
 - SHA-256: [`SHA256SUMS`](SHA256SUMS)
 - Checksum từng file của skill: [`SKILL_SHA256SUMS`](SKILL_SHA256SUMS)
 - Giấy phép bên thứ ba: [`THIRD_PARTY_NOTICES.md`](skills/viet-pro/THIRD_PARTY_NOTICES.md)

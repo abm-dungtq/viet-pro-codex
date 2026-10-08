@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "date": "2026-10-08T08:16:07.729Z",
+    "runner": "claude",
+    "model": "default",
+    "skill_version": "5.3.0",
+    "skill_bytes": 125146,
+    "judge": true,
+    "skill_bytes_now": 125146,
+    "regraded_at": "2026-10-08T08:16:33.678Z",
+    "graders_skill_version": "5.3.0"
+  },
+  "summary": {
+    "pass": 12,
+    "total": 12,
+    "judge_avg": {
+      "brief_fit": 4.92,
+      "natural_vietnamese": 4.75,
+      "factual_integrity": 4.67,
+      "channel_fit": 4.75
+    },
+    "cost_usd": 3.2991
+  },
+  "cases": [
+    {
+      "id": "linkedin-write",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "354 chữ (cho phép 230-440)"
+        }
+      },
+      "words": 354,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.3286894,
+      "num_turns": 7,
+      "duration_ms": 50219,
+      "output": "Công ty Minh An rút thời gian onboarding nhân viên mới từ 30 ngày xuống 18 ngày sau khi đưa AI vào đào tạo nội bộ.\n\nCon số đó đáng chú ý, nhưng tôi nghĩ nó mới là một nửa câu chuyện.\n\nKhóa đào tạo của Minh An kéo dài 6 tuần. Kết thúc khóa, 62% nhân viên hoàn thành. Nghĩa là cứ 10 người thì khoảng 4 người chưa đi hết lộ trình.\n\nNhiều founder sẽ nhìn vào con số 18 ngày và muốn áp dụng ngay. Tôi hiểu. Với một công ty đang tuyển nhanh, rút ngắn 12 ngày onboarding cho mỗi người là khoản tiết kiệm thật: người mới bắt tay vào việc sớm hơn, quản lý bớt thời gian kèm cặp lặp lại.\n\nNhưng tỷ lệ hoàn thành 62% đặt ra vài câu hỏi tôi muốn có câu trả lời trước khi kết luận:\n\n1. Nhóm chưa hoàn thành gặp khó ở đâu: nội dung, thời lượng hay khối lượng công việc song song?\n2. Mức giảm onboarding đến chủ yếu từ nhóm hoàn thành, hay đều trên toàn bộ nhân viên mới?\n3. Sau 6 tuần, kiến thức có được dùng lại trong công việc hằng ngày không?\n\nTôi không đặt những câu hỏi này để hạ thấp kết quả. Từ 30 xuống 18 ngày là một cải thiện rõ ràng. Tôi đặt chúng vì đây là chỗ các dự án AI nội bộ hay bị đánh giá lệch: người ta nhìn vào con số đẹp nhất và bỏ qua nhóm người không theo kịp.\n\nVới founder công nghệ, điều tôi rút ra từ trường hợp của Minh An khá đơn giản. Khi đưa AI vào đào tạo, hãy theo dõi ít nhất hai chỉ số cùng lúc: tốc độ người mới làm được việc và tỷ lệ người thực sự đi hết chương trình. Chỉ nhìn một chỉ số, bạn dễ tối ưu cho nhóm vốn đã học tốt và bỏ sót nhóm cần hỗ trợ nhất.\n\nNếu công ty bạn đã thử AI trong đào tạo nội bộ, bạn đang đo hiệu quả bằng chỉ số nào?\n",
+      "raw": "<<<BAI>>>\nCông ty Minh An rút thời gian onboarding nhân viên mới từ 30 ngày xuống 18 ngày sau khi đưa AI vào đào tạo nội bộ.\n\nCon số đó đáng chú ý, nhưng tôi nghĩ nó mới là một nửa câu chuyện.\n\nKhóa đào tạo của Minh An kéo dài 6 tuần. Kết thúc khóa, 62% nhân viên hoàn thành. Nghĩa là cứ 10 người thì khoảng 4 người chưa đi hết lộ trình.\n\nNhiều founder sẽ nhìn vào con số 18 ngày và muốn áp dụng ngay. Tôi hiểu. Với một công ty đang tuyển nhanh, rút ngắn 12 ngày onboarding cho mỗi người là khoản tiết kiệm thật: người mới bắt tay vào việc sớm hơn, quản lý bớt thời gian kèm cặp lặp lại.\n\nNhưng tỷ lệ hoàn thành 62% đặt ra vài câu hỏi tôi muốn có câu trả lời trước khi kết luận:\n\n1. Nhóm chưa hoàn thành gặp khó ở đâu: nội dung, thời lượng hay khối lượng công việc song song?\n2. Mức giảm onboarding đến chủ yếu từ nhóm hoàn thành, hay đều trên toàn bộ nhân viên mới?\n3. Sau 6 tuần, kiến thức có được dùng lại trong công việc hằng ngày không?\n\nTôi không đặt những câu hỏi này để hạ thấp kết quả. Từ 30 xuống 18 ngày là một cải thiện rõ ràng. Tôi đặt chúng vì đây là chỗ các dự án AI nội bộ hay bị đánh giá lệch: người ta nhìn vào con số đẹp nhất và bỏ qua nhóm người không theo kịp.\n\nVới founder công nghệ, điều tôi rút ra từ trường hợp của Minh An khá đơn giản. Khi đưa AI vào đào tạo, hãy theo dõi ít nhất hai chỉ số cùng lúc: tốc độ người mới làm được việc và tỷ lệ người thực sự đi hết chương trình. Chỉ nhìn một chỉ số, bạn dễ tối ưu cho nhóm vốn đã học tốt và bỏ sót nhóm cần hỗ trợ nhất.\n\nNếu công ty bạn đã thử AI trong đào tạo nội bộ, bạn đang đo hiệu quả bằng chỉ số nào?\n<<<HET>>>\n\nGhi chú:\n- Bài dài 354 chữ. Trình kiểm tra văn phong của skill không báo lỗi nào. Không có hashtag và không có lời kêu gọi mua hàng. Bài chỉ kết bằng một câu hỏi mở để người đọc thảo luận.\n- Ba số liệu bạn đưa (6 tuần, 62%, 30 xuống 18 ngày) giữ nguyên. Có hai con số tôi tự tính từ dữ kiện của bạn: \"khoảng 4 trên 10 người\" chưa hoàn thành (100% − 62%) và mức \"rút ngắn 12 ngày\" (30 − 18).\n- Tôi không có thông tin về công cụ AI cụ thể hay cách Minh An triển khai, nên không mô tả phần đó. Bài cũng không khẳng định thời gian onboarding giảm hoàn toàn nhờ AI.\n- Bài xưng \"tôi\" ở vị trí người quan sát bên ngoài. Nếu người đăng là người của Minh An, cần đổi sang góc nhìn người trong cuộc.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 4,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Bài giữ đủ ba số liệu (6 tuần, 62%, 30 xuống 18 ngày). Các phép suy ra như khoảng 4/10 người chưa hoàn thành hay rút ngắn 12 ngày đều đúng, không thêm nguồn hay trích dẫn, không có CTA bán hàng hay hashtag; bài phân tích tỉnh táo, hợp với founder. Một vài câu hơi gượng như 'Mức giảm onboarding đến chủ yếu từ nhóm hoàn thành', và nhận định 'các dự án AI nội bộ hay bị đánh giá lệch' là quan điểm khái quát chứ không phải dữ kiện."
+      }
+    },
+    {
+      "id": "facebook-humanize",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 2
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "preserved": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "65 chữ (cho phép 25-120)"
+        }
+      },
+      "words": 65,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.1920342,
+      "num_turns": 4,
+      "duration_ms": 25030,
+      "output": "Minh Châu vừa đạt tỷ lệ quay lại 18%, và với họ, ngày 10/09/2026 là một bước ngoặt thật sự. Chi tiết ở đây: https://example.com/minh-chau\n\nTheo mình, chuyện này nằm ở tư duy nhiều hơn là ở công cụ. Kết quả đến nhanh hơn, và cũng mạnh hơn.\n\nBáo cáo ghi \"mẫu 120 khách hàng\" [1].\n\nMột con số đáng để ngẫm thêm một chút.\n",
+      "raw": "<<<BAI>>>\nMinh Châu vừa đạt tỷ lệ quay lại 18%, và với họ, ngày 10/09/2026 là một bước ngoặt thật sự. Chi tiết ở đây: https://example.com/minh-chau\n\nTheo mình, chuyện này nằm ở tư duy nhiều hơn là ở công cụ. Kết quả đến nhanh hơn, và cũng mạnh hơn.\n\nBáo cáo ghi \"mẫu 120 khách hàng\" [1].\n\nMột con số đáng để ngẫm thêm một chút.\n<<<HET>>>\n\nGhi chú:\n- Tôi giữ nguyên tên, số liệu, ngày, URL, câu trích dẫn trong ngoặc kép và citation [1]. URL giờ đứng cuối dòng, không còn dấu chấm dính liền phía sau.\n- Tôi đã bỏ câu mở đầu kiểu chatbot (\"Dưới đây là bài viết bạn yêu cầu\"), các nhãn in đậm, hai lối nói \"không chỉ… mà còn\" và \"không phải… mà là\", cụm sáo \"bối cảnh thay đổi chưa từng có\" và hai câu kết kịch tính.\n- Bài gốc không nói rõ ngày 10/09/2026 xảy ra chuyện gì. Bản mới không gắn mốc 18% vào ngày đó, cũng không thêm chi tiết nào để giải thích. Bạn nên kiểm tra lại nguồn để biết \"bước ngoặt\" là gì rồi nói cụ thể hơn.\n- Câu \"nhanh hơn, mạnh hơn\" chưa nói nhanh hơn hay mạnh hơn so với cái gì. Tôi giữ nguyên ý vì nguồn không có thêm thông tin.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 4,
+        "factual_integrity": 4,
+        "channel_fit": 4,
+        "invented_facts": [],
+        "notes": "Bài giữ đủ tên, tỷ lệ 18%, ngày 10/09/2026, URL, trích dẫn và [1], cũng đã bỏ các dấu hiệu AI như lời mở đầu, nhãn in đậm và câu kết sáo rỗng; tuy vậy chữ \"vừa\" gợi một mốc thời gian mà nguồn không nói, \"Kết quả\" là chủ ngữ bài tự thêm, và câu cuối biến \"điều đáng suy ngẫm\" thành \"một con số\", nên ý gốc bị lệch nhẹ."
+      }
+    },
+    {
+      "id": "technical-preserve",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "preserved": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "34 chữ (cho phép 20-80)"
+        }
+      },
+      "words": 34,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.1669026,
+      "num_turns": 4,
+      "duration_ms": 13781,
+      "output": "---\ntitle: \"Dưới đây là cấu hình\"\nurl: https://example.com/config\n---\n\nCó thể biên tập phần văn xuôi, nhưng phải giữ nguyên khối bên dưới.\n\n```yaml\nmodel: gpt-example\ncommand: \"Không chỉ đọc mà còn ghi\"\nurl: https://example.com/api?v=2\n```\n",
+      "raw": "<<<BAI>>>\n---\ntitle: \"Dưới đây là cấu hình\"\nurl: https://example.com/config\n---\n\nCó thể biên tập phần văn xuôi, nhưng phải giữ nguyên khối bên dưới.\n\n```yaml\nmodel: gpt-example\ncommand: \"Không chỉ đọc mà còn ghi\"\nurl: https://example.com/api?v=2\n```\n<<<HET>>>\n\nGhi chú:\n- File chỉ có một câu văn xuôi. Tôi bỏ cấu trúc bị động \"có thể được biên tập\" để câu gọn và tự nhiên hơn. Nghĩa của câu không đổi.\n- Frontmatter và khối YAML giữ nguyên, kể cả URL và chuỗi `command`, dù trong đó có cụm \"Dưới đây là\" và \"Không chỉ… mà còn…\".\n- Không tra cứu web. File cũng không có dữ kiện nào cần kiểm chứng.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Bài giữ nguyên frontmatter và khối YAML, chỉ sửa câu văn xuôi sang dạng chủ động, gọn và tự nhiên hơn mà không thêm dữ kiện nào."
+      }
+    },
+    {
+      "id": "blog-seo-write",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 1
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "722 chữ (cho phép 450-820)"
+        }
+      },
+      "words": 722,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.5231408,
+      "num_turns": 13,
+      "duration_ms": 91346,
+      "output": "# Quản lý dòng tiền cho quán cà phê nhỏ từ con số thật\n\nQuản lý dòng tiền là biết rõ mỗi tháng tiền vào quán bao nhiêu, ra khỏi quán bao nhiêu và lúc nào. Với một quán cà phê nhỏ, đây là việc nên làm hằng tuần bằng một bảng tính đơn giản. Không cần phần mềm đắt tiền, chỉ cần ghi chép đều tay.\n\nBài này dùng một quán mẫu để minh họa: doanh thu 120 triệu đồng/tháng, chi phí nguyên liệu chiếm 35% doanh thu. Khi áp dụng, hãy thay bằng số liệu của quán bạn.\n\n## Doanh thu cao chưa chắc là tiền mặt dư dả\n\nNhiều chủ quán nhìn tổng doanh thu cuối tháng rồi yên tâm. Nhưng doanh thu chỉ cho biết khách đã trả bao nhiêu. Nó không cho biết hôm nay trong két và tài khoản còn đủ tiền để nhập hàng, trả lương hay đóng tiền mặt bằng hay không.\n\nLấy quán mẫu làm ví dụ. Với doanh thu 120 triệu đồng và nguyên liệu chiếm 35%, quán chi khoảng 42 triệu đồng cho cà phê, sữa, đường, trái cây và các thứ cần pha chế. Phần còn lại là 78 triệu đồng. Đây chưa phải lợi nhuận, vì từ khoản này chủ quán còn phải trả mặt bằng, lương nhân viên, điện nước, khấu hao máy móc và những khoản phát sinh khác. Nếu không tách từng khoản ra, rất dễ nhầm 78 triệu là tiền \"của mình\".\n\n## Tách dòng tiền thành ba nhóm\n\nCách dễ bắt đầu nhất là chia mọi khoản chi thành ba nhóm:\n\n- **Chi phí biến đổi:** tăng giảm theo số ly bán được, chủ yếu là nguyên liệu và bao bì.\n- **Chi phí cố định:** gần như không đổi dù quán đông hay vắng, như tiền thuê mặt bằng và lương cứng.\n- **Chi phí không đều:** sửa máy, thay dụng cụ, đóng các khoản theo quý hoặc theo năm.\n\nVới quán mẫu, nhóm nguyên liệu đã chiếm khoảng 42 triệu đồng mỗi tháng. Khi biết con số này, bạn có một mốc để so sánh. Tháng nào tỷ lệ nguyên liệu vượt 35% doanh thu, hãy xem lại: giá nhập có tăng không, có hao hụt hay đổ bỏ nhiều không, hay công thức pha chế đang bị làm lệch.\n\nNhóm chi phí không đều hay gây bất ngờ nhất. Máy xay hỏng giữa tháng có thể làm hụt tiền nhập hàng tuần sau, nên mỗi tháng hãy trích riêng một ít để dự phòng.\n\n## Lập lịch thu chi theo tuần\n\nDoanh thu của quán cà phê thường vào đều mỗi ngày, còn chi phí lại dồn vào vài thời điểm: ngày nhập hàng, ngày trả lương, ngày đóng tiền mặt bằng. Nếu chỉ nhìn số tổng của cả tháng, bạn sẽ không thấy những tuần tiền mặt bị hụt.\n\nHãy lập một lịch đơn giản gồm bốn cột: tuần, tiền dự kiến thu, tiền dự kiến chi, số dư cuối tuần. Ghi trước những khoản chi lớn vào đúng tuần phải trả. Khi thấy tuần nào số dư xuống thấp, bạn có thời gian để xoay xở: giãn lịch nhập hàng, thương lượng với nhà cung cấp hoặc hoãn một khoản mua sắm chưa gấp.\n\n## Ba thói quen giữ dòng tiền ổn định\n\nThói quen đầu tiên là tách tiền quán khỏi tiền cá nhân bằng một tài khoản riêng. Tiền chung một túi thì rất khó biết quán thực sự lời hay lỗ.\n\nThứ hai, kiểm kê nguyên liệu định kỳ, đối chiếu lượng nhập, lượng bán và lượng tồn. Trong ví dụ trên, đây là khoản chi được nêu rõ nhất và cũng dễ thất thoát.\n\nThứ ba, tự trả cho mình một mức lương cố định thay vì rút tiền tùy hứng. Phần còn lại sau đó mới dùng để tái đầu tư.\n\n## Bắt đầu từ một bảng tính\n\nQuản lý dòng tiền không đòi hỏi kiến thức kế toán phức tạp. Với quán mẫu doanh thu 120 triệu đồng/tháng, chỉ cần theo dõi sát khoản nguyên liệu 35% và lên lịch cho các khoản chi lớn, chủ quán đã nắm được phần lớn bức tranh tài chính. Hãy mở một bảng tính ngay tuần này và ghi lại mọi khoản thu chi trong một tháng để thấy tiền của quán đang đi đâu.\n",
+      "raw": "<<<BAI>>>\n# Quản lý dòng tiền cho quán cà phê nhỏ từ con số thật\n\nQuản lý dòng tiền là biết rõ mỗi tháng tiền vào quán bao nhiêu, ra khỏi quán bao nhiêu và lúc nào. Với một quán cà phê nhỏ, đây là việc nên làm hằng tuần bằng một bảng tính đơn giản. Không cần phần mềm đắt tiền, chỉ cần ghi chép đều tay.\n\nBài này dùng một quán mẫu để minh họa: doanh thu 120 triệu đồng/tháng, chi phí nguyên liệu chiếm 35% doanh thu. Khi áp dụng, hãy thay bằng số liệu của quán bạn.\n\n## Doanh thu cao chưa chắc là tiền mặt dư dả\n\nNhiều chủ quán nhìn tổng doanh thu cuối tháng rồi yên tâm. Nhưng doanh thu chỉ cho biết khách đã trả bao nhiêu. Nó không cho biết hôm nay trong két và tài khoản còn đủ tiền để nhập hàng, trả lương hay đóng tiền mặt bằng hay không.\n\nLấy quán mẫu làm ví dụ. Với doanh thu 120 triệu đồng và nguyên liệu chiếm 35%, quán chi khoảng 42 triệu đồng cho cà phê, sữa, đường, trái cây và các thứ cần pha chế. Phần còn lại là 78 triệu đồng. Đây chưa phải lợi nhuận, vì từ khoản này chủ quán còn phải trả mặt bằng, lương nhân viên, điện nước, khấu hao máy móc và những khoản phát sinh khác. Nếu không tách từng khoản ra, rất dễ nhầm 78 triệu là tiền \"của mình\".\n\n## Tách dòng tiền thành ba nhóm\n\nCách dễ bắt đầu nhất là chia mọi khoản chi thành ba nhóm:\n\n- **Chi phí biến đổi:** tăng giảm theo số ly bán được, chủ yếu là nguyên liệu và bao bì.\n- **Chi phí cố định:** gần như không đổi dù quán đông hay vắng, như tiền thuê mặt bằng và lương cứng.\n- **Chi phí không đều:** sửa máy, thay dụng cụ, đóng các khoản theo quý hoặc theo năm.\n\nVới quán mẫu, nhóm nguyên liệu đã chiếm khoảng 42 triệu đồng mỗi tháng. Khi biết con số này, bạn có một mốc để so sánh. Tháng nào tỷ lệ nguyên liệu vượt 35% doanh thu, hãy xem lại: giá nhập có tăng không, có hao hụt hay đổ bỏ nhiều không, hay công thức pha chế đang bị làm lệch.\n\nNhóm chi phí không đều hay gây bất ngờ nhất. Máy xay hỏng giữa tháng có thể làm hụt tiền nhập hàng tuần sau, nên mỗi tháng hãy trích riêng một ít để dự phòng.\n\n## Lập lịch thu chi theo tuần\n\nDoanh thu của quán cà phê thường vào đều mỗi ngày, còn chi phí lại dồn vào vài thời điểm: ngày nhập hàng, ngày trả lương, ngày đóng tiền mặt bằng. Nếu chỉ nhìn số tổng của cả tháng, bạn sẽ không thấy những tuần tiền mặt bị hụt.\n\nHãy lập một lịch đơn giản gồm bốn cột: tuần, tiền dự kiến thu, tiền dự kiến chi, số dư cuối tuần. Ghi trước những khoản chi lớn vào đúng tuần phải trả. Khi thấy tuần nào số dư xuống thấp, bạn có thời gian để xoay xở: giãn lịch nhập hàng, thương lượng với nhà cung cấp hoặc hoãn một khoản mua sắm chưa gấp.\n\n## Ba thói quen giữ dòng tiền ổn định\n\nThói quen đầu tiên là tách tiền quán khỏi tiền cá nhân bằng một tài khoản riêng. Tiền chung một túi thì rất khó biết quán thực sự lời hay lỗ.\n\nThứ hai, kiểm kê nguyên liệu định kỳ, đối chiếu lượng nhập, lượng bán và lượng tồn. Trong ví dụ trên, đây là khoản chi được nêu rõ nhất và cũng dễ thất thoát.\n\nThứ ba, tự trả cho mình một mức lương cố định thay vì rút tiền tùy hứng. Phần còn lại sau đó mới dùng để tái đầu tư.\n\n## Bắt đầu từ một bảng tính\n\nQuản lý dòng tiền không đòi hỏi kiến thức kế toán phức tạp. Với quán mẫu doanh thu 120 triệu đồng/tháng, chỉ cần theo dõi sát khoản nguyên liệu 35% và lên lịch cho các khoản chi lớn, chủ quán đã nắm được phần lớn bức tranh tài chính. Hãy mở một bảng tính ngay tuần này và ghi lại mọi khoản thu chi trong một tháng để thấy tiền của quán đang đi đâu.\n<<<HET>>>\n\nGhi chú:\n- **Độ dài và cấu trúc:** bài dài khoảng 715 chữ (đếm theo khoảng trắng, không tính ký hiệu Markdown). Có 1 tiêu đề H1 và 5 tiêu đề H2.\n- **Số liệu:** chỉ dùng hai dữ kiện bạn đưa ra. Có hai con số tôi tự tính từ đó: 42 triệu đồng (bằng 35% của 120 triệu) và 78 triệu đồng (phần còn lại). Tôi không đưa con số nào cho mặt bằng, lương hay điện nước.\n- **Thẻ meta (gợi ý, nằm ngoài bài):**\n  - Meta title: \"Quản lý dòng tiền cho quán cà phê nhỏ\"\n  - Meta description: \"Hướng dẫn quản lý dòng tiền cho quán cà phê nhỏ qua ví dụ quán doanh thu 120 triệu đồng/tháng, nguyên liệu chiếm 35%.\"\n- **Những gì bỏ qua:** tôi không chèn chỗ trống cho liên kết nội bộ hay ảnh, để bài là bản hoàn chỉnh cho người đọc. Nếu bạn cần, có thể thêm 2–3 liên kết nội bộ khi đưa lên website.\n- **Kiểm tra:** công cụ rà văn phong của skill báo lần đầu là có nhiều đoạn liền nhau dài bằng nhau. Tôi đã sửa phần đó nhưng chưa chạy lại công cụ để xác nhận.\n- **Phạm vi:** tôi không tra cứu web và không đăng bài lên đâu cả.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 4,
+        "invented_facts": [],
+        "notes": "Bài đáp ứng đủ brief với 1 H1, 5 H2, độ dài phù hợp; chỉ dùng hai dữ kiện đã cho (42 và 78 triệu là phép tính suy ra), văn tự nhiên, nhưng từ khóa 'quản lý dòng tiền' chưa xuất hiện trong H2 nào nên tối ưu SEO còn có thể tốt hơn."
+      }
+    },
+    {
+      "id": "newsletter-write",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 1
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "184 chữ (cho phép 130-280)"
+        }
+      },
+      "words": 184,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.2472024,
+      "num_turns": 6,
+      "duration_ms": 30548,
+      "output": "Chào anh chị,\n\nNhững ngày cuối tháng, cuối quý, người làm kế toán thường mất khá nhiều thời gian chỉ để xuất hóa đơn điện tử: mở từng hóa đơn, kiểm tra, xuất, rồi lặp lại với hóa đơn tiếp theo. Công việc không khó nhưng tốn sức, và càng gấp thì càng dễ sót.\n\nVì vậy, chúng tôi vui mừng báo tin: ngày 15/10/2026, phần mềm kế toán của Công ty Sao Mai bản 4.2 chính thức ra mắt, kèm tính năng xuất hóa đơn điện tử hàng loạt. Thay vì làm từng hóa đơn một, anh chị có thể xuất nhiều hóa đơn trong một lần thao tác.\n\nChúng tôi mong thời gian tiết kiệm được sẽ giúp anh chị có thêm thời gian để đối chiếu số liệu cho kỹ hơn. Vào những ngày cao điểm, có khi còn được về nhà sớm hơn một chút.\n\nCảm ơn anh chị đã luôn đồng hành cùng Sao Mai. Khi dùng bản 4.2, nếu có góp ý hay thắc mắc gì, anh chị cứ trả lời email này để chúng tôi được nghe.\n",
+      "raw": "<<<BAI>>>\nChào anh chị,\n\nNhững ngày cuối tháng, cuối quý, người làm kế toán thường mất khá nhiều thời gian chỉ để xuất hóa đơn điện tử: mở từng hóa đơn, kiểm tra, xuất, rồi lặp lại với hóa đơn tiếp theo. Công việc không khó nhưng tốn sức, và càng gấp thì càng dễ sót.\n\nVì vậy, chúng tôi vui mừng báo tin: ngày 15/10/2026, phần mềm kế toán của Công ty Sao Mai bản 4.2 chính thức ra mắt, kèm tính năng xuất hóa đơn điện tử hàng loạt. Thay vì làm từng hóa đơn một, anh chị có thể xuất nhiều hóa đơn trong một lần thao tác.\n\nChúng tôi mong thời gian tiết kiệm được sẽ giúp anh chị có thêm thời gian để đối chiếu số liệu cho kỹ hơn. Vào những ngày cao điểm, có khi còn được về nhà sớm hơn một chút.\n\nCảm ơn anh chị đã luôn đồng hành cùng Sao Mai. Khi dùng bản 4.2, nếu có góp ý hay thắc mắc gì, anh chị cứ trả lời email này để chúng tôi được nghe.\n<<<HET>>>\n\nGhi chú:\n- Bài dài khoảng 190 chữ. Tôi dùng cách xưng \"chúng tôi – anh chị\" để giữ giọng ấm mà vẫn lịch sự với khách hàng doanh nghiệp.\n- Brief không nói tên thương mại của phần mềm nên tôi viết \"phần mềm kế toán của Công ty Sao Mai\". Nếu sản phẩm có tên riêng, anh chị thay vào chỗ này.\n- Tôi không viết thêm về cách nâng cấp, chi phí hay số hóa đơn tối đa mỗi lần xuất vì brief không cho các thông tin đó. Nếu đã có, có thể thêm một câu vào đoạn thứ hai.\n- Câu cuối mời khách trả lời email. Chỉ nên giữ câu này nếu có người theo dõi và trả lời hộp thư gửi newsletter. Nếu không, anh chị thay bằng kênh hỗ trợ chính thức của công ty.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 4,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Bài dài khoảng 190 chữ, giọng ấm áp, không dùng emoji, nêu đúng phiên bản 4.2, ngày 15/10/2026 và tính năng xuất hóa đơn điện tử hàng loạt mà không bịa số liệu hay nguồn; chỉ có câu 'thời gian tiết kiệm được sẽ giúp anh chị có thêm thời gian' bị lặp từ, đọc hơi vụng."
+      }
+    },
+    {
+      "id": "zalo-short",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "63 chữ (cho phép 25-110)"
+        }
+      },
+      "words": 63,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.1684192,
+      "num_turns": 3,
+      "duration_ms": 15341,
+      "output": "Kính chào Quý khách,\n\nGarage Phú Thịnh xin nhắc lịch bảo dưỡng xe miễn phí của Quý khách vào ngày 20/10/2026. Quý khách vui lòng sắp xếp thời gian đưa xe đến garage đúng ngày hẹn.\n\nNếu cần đổi lịch hoặc muốn hỏi thêm, Quý khách vui lòng gọi hotline 0909 123 456.\n\nCảm ơn Quý khách đã tin tưởng Garage Phú Thịnh.\n",
+      "raw": "<<<BAI>>>\nKính chào Quý khách,\n\nGarage Phú Thịnh xin nhắc lịch bảo dưỡng xe miễn phí của Quý khách vào ngày 20/10/2026. Quý khách vui lòng sắp xếp thời gian đưa xe đến garage đúng ngày hẹn.\n\nNếu cần đổi lịch hoặc muốn hỏi thêm, Quý khách vui lòng gọi hotline 0909 123 456.\n\nCảm ơn Quý khách đã tin tưởng Garage Phú Thịnh.\n<<<HET>>>\n\nTin nhắn dài khoảng 60 chữ. Ngày, tên garage và số hotline giữ nguyên như bạn đưa. Tin chỉ dùng chữ in hoa ở đầu câu, tên riêng và chữ \"Quý khách\" theo cách viết lịch sự thường gặp. Không có chữ nào viết in hoa toàn bộ để nhấn mạnh.\n\nCòn hai điểm chưa có:\n- **Giờ hẹn và địa chỉ:** bạn chưa đưa nên tôi không thêm vào. Nếu có giờ hẹn cụ thể, bạn nên thêm vào tin.\n- **Gửi tin:** đây mới là bản nháp, tôi chưa gửi cho ai.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Tin nhắn khoảng 63 chữ, đủ tên garage, ngày 20/10/2026 và hotline, giọng lịch sự, không viết IN HOA để nhấn và không thêm dữ kiện ngoài brief; ý gọi hotline để đổi lịch là lời mời hợp lý, không phải cam kết bịa."
+      }
+    },
+    {
+      "id": "x-thread",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "294 chữ (cho phép 120-450)"
+        }
+      },
+      "words": 294,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.36696239999999997,
+      "num_turns": 13,
+      "duration_ms": 56844,
+      "output": "1/ Doanh nghiệp nhỏ hay nghĩ \"có một bản sao lưu là đủ\". Đến khi ổ cứng hỏng, máy dính mã độc tống tiền hay văn phòng bị ngập mới thấy một bản là quá mong manh. Quy tắc 3-2-1 giải quyết đúng chuyện này. Cách làm cũng không tốn kém như nhiều người tưởng.\n\n2/ Quy tắc rất ngắn:\n- 3 bản dữ liệu: bản đang dùng và 2 bản sao lưu\n- 2 loại phương tiện lưu trữ khác nhau\n- 1 bản để ngoài trụ sở\n\nMỗi con số chặn một kiểu rủi ro riêng.\n\n3/ Vì sao cần 3 bản? Sao lưu cũng có lúc hỏng: tệp lỗi, ổ hết chỗ, lịch tự động ngừng chạy mà không ai để ý. Có 2 bản sao lưu thì khi một bản trục trặc, vẫn còn bản kia để khôi phục.\n\n4/ Vì sao cần 2 loại phương tiện? Nếu mọi bản đều nằm trên cùng một loại ổ, cùng một lỗi có thể xóa sạch tất cả. Kết hợp ổ cứng gắn ngoài hoặc ổ lưu trữ mạng với lưu trữ đám mây để không phụ thuộc vào một điểm hỏng duy nhất.\n\n5/ Vì sao cần 1 bản ngoài trụ sở? Cháy, trộm, ngập nước không chừa ổ sao lưu đặt cạnh máy chủ. Mã độc tống tiền cũng thường mã hóa luôn mọi ổ đang cắm vào mạng nội bộ. Một bản ở nơi khác, tách khỏi hệ thống, là đường lui cuối cùng.\n\n6/ Bắt đầu từ việc nhỏ: liệt kê dữ liệu không thể mất (kế toán, hợp đồng, danh sách khách hàng), đặt lịch sao lưu tự động rồi mỗi tháng thử khôi phục một tệp. Sao lưu chưa từng khôi phục thử thì chưa chắc đã dùng được.\n",
+      "raw": "<<<BAI>>>\n1/ Doanh nghiệp nhỏ hay nghĩ \"có một bản sao lưu là đủ\". Đến khi ổ cứng hỏng, máy dính mã độc tống tiền hay văn phòng bị ngập mới thấy một bản là quá mong manh. Quy tắc 3-2-1 giải quyết đúng chuyện này. Cách làm cũng không tốn kém như nhiều người tưởng.\n\n2/ Quy tắc rất ngắn:\n- 3 bản dữ liệu: bản đang dùng và 2 bản sao lưu\n- 2 loại phương tiện lưu trữ khác nhau\n- 1 bản để ngoài trụ sở\n\nMỗi con số chặn một kiểu rủi ro riêng.\n\n3/ Vì sao cần 3 bản? Sao lưu cũng có lúc hỏng: tệp lỗi, ổ hết chỗ, lịch tự động ngừng chạy mà không ai để ý. Có 2 bản sao lưu thì khi một bản trục trặc, vẫn còn bản kia để khôi phục.\n\n4/ Vì sao cần 2 loại phương tiện? Nếu mọi bản đều nằm trên cùng một loại ổ, cùng một lỗi có thể xóa sạch tất cả. Kết hợp ổ cứng gắn ngoài hoặc ổ lưu trữ mạng với lưu trữ đám mây để không phụ thuộc vào một điểm hỏng duy nhất.\n\n5/ Vì sao cần 1 bản ngoài trụ sở? Cháy, trộm, ngập nước không chừa ổ sao lưu đặt cạnh máy chủ. Mã độc tống tiền cũng thường mã hóa luôn mọi ổ đang cắm vào mạng nội bộ. Một bản ở nơi khác, tách khỏi hệ thống, là đường lui cuối cùng.\n\n6/ Bắt đầu từ việc nhỏ: liệt kê dữ liệu không thể mất (kế toán, hợp đồng, danh sách khách hàng), đặt lịch sao lưu tự động rồi mỗi tháng thử khôi phục một tệp. Sao lưu chưa từng khôi phục thử thì chưa chắc đã dùng được.\n<<<HET>>>\n\nThread có 6 tweet và không đưa số liệu thống kê nào, vì bạn yêu cầu không tra cứu web nên tôi không có nguồn để kiểm chứng. Tôi chưa chạy được script đếm ký tự do lệnh cần bạn duyệt. Đếm tay thì tweet dài nhất (1/) khoảng 255 ký tự, nên tweet nào cũng dưới 280. Công cụ rà soát tiếng Việt cũng đã chạy, tôi sửa hai cảnh báo nhỏ về dấu phẩy trước chữ \"và\". Tôi chưa đăng thread lên X.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Thread có 6 tweet, đánh số đúng dạng và đều dưới 280 ký tự; bài giải thích lần lượt từng thành phần của quy tắc 3-2-1, không thêm số liệu, tên riêng hay nguồn; chỉ có câu 'không tốn kém như nhiều người tưởng' là nhận định chung, chưa có căn cứ cụ thể nhưng không phải dữ kiện bịa."
+      }
+    },
+    {
+      "id": "video-script",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 9
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "156 chữ (cho phép 110-260)"
+        }
+      },
+      "words": 156,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.26711360000000006,
+      "num_turns": 5,
+      "duration_ms": 42304,
+      "output": "**LEXIGO – KỊCH BẢN VIDEO DỌC 60 GIÂY**\n\n**0–3s**\n[Cận mặt người trẻ cầm điện thoại, cau mày nhìn màn hình. Chữ lớn giữa khung: \"Tuần sau quên gần hết?\"]\nHọc từ mới hôm nay, tuần sau quên gần hết. Bạn có bị vậy không?\n\n**3–12s**\n[Cảnh tua nhanh: bàn học ngổn ngang sổ tay, bút highlight, đồng hồ chạy. Cắt sang cảnh đang nói chuyện với người nước ngoài thì ngập ngừng, chữ trên màn hình tan biến.]\nMình từng như thế. Ngồi học dồn cả buổi, rồi để đó. Đến lúc cần nói thì chữ chạy đâu mất.\n\n**12–20s**\n[Hình động đơn giản: một từ tiếng Anh mờ dần theo thời gian. Chữ trên hình: \"Không gặp lại = quên dần\"]\nThật ra không phải trí nhớ bạn kém. Từ nào không được gặp lại thì não sẽ quên dần, ai cũng vậy.\n\n**20–32s**\n[Logo LexiGo hiện ra. Quay màn hình app: đồng hồ đếm \"10:00\", vài thẻ từ mới lật qua, rồi thông báo \"Đến giờ ôn từ cũ\" bật lên.]\nLexiGo giúp bạn đúng chỗ này. Mỗi ngày chỉ cần mười phút. Học vài từ mới, rồi app nhắc bạn ôn lại từ cũ vào đúng lúc bạn bắt đầu dễ quên.\n\n**32–40s**\n[Chia đôi màn hình: bên trái một thẻ từ đã nhớ chắc, lịch ôn giãn xa; bên phải một thẻ từ hay quên, lịch ôn dày hơn.]\nTừ nào bạn nhớ chắc rồi, lâu lâu mới gặp lại. Từ nào hay quên, app cho gặp lại sớm hơn.\n\n**40–50s**\n[Chữ trên hình: \"Lặp lại ngắt quãng = ôn đúng lúc\". Minh họa các mốc ôn trên một đường thời gian, khoảng cách giữa các mốc giãn dần.]\nCách này gọi là lặp lại ngắt quãng. Nói nôm na là ôn đúng lúc, không ôn thừa, cũng không để lâu quá.\n\n**50–55s**\n[Người dùng ngồi trên xe buýt hoặc quán cà phê, thong thả lướt app. Chữ lớn: \"Không cần nhiều. Cần đều.\"]\nNên bạn không cần học nhiều. Chỉ cần học đều.\n\n**55–60s**\n[Màn hình kết: logo LexiGo, chữ \"Mỗi ngày 10 phút\", nút \"Tải LexiGo\".]\nTải LexiGo, rồi thử mười phút đầu tiên ngay tối nay nhé.\n",
+      "raw": "<<<BAI>>>\n**LEXIGO – KỊCH BẢN VIDEO DỌC 60 GIÂY**\n\n**0–3s**\n[Cận mặt người trẻ cầm điện thoại, cau mày nhìn màn hình. Chữ lớn giữa khung: \"Tuần sau quên gần hết?\"]\nHọc từ mới hôm nay, tuần sau quên gần hết. Bạn có bị vậy không?\n\n**3–12s**\n[Cảnh tua nhanh: bàn học ngổn ngang sổ tay, bút highlight, đồng hồ chạy. Cắt sang cảnh đang nói chuyện với người nước ngoài thì ngập ngừng, chữ trên màn hình tan biến.]\nMình từng như thế. Ngồi học dồn cả buổi, rồi để đó. Đến lúc cần nói thì chữ chạy đâu mất.\n\n**12–20s**\n[Hình động đơn giản: một từ tiếng Anh mờ dần theo thời gian. Chữ trên hình: \"Không gặp lại = quên dần\"]\nThật ra không phải trí nhớ bạn kém. Từ nào không được gặp lại thì não sẽ quên dần, ai cũng vậy.\n\n**20–32s**\n[Logo LexiGo hiện ra. Quay màn hình app: đồng hồ đếm \"10:00\", vài thẻ từ mới lật qua, rồi thông báo \"Đến giờ ôn từ cũ\" bật lên.]\nLexiGo giúp bạn đúng chỗ này. Mỗi ngày chỉ cần mười phút. Học vài từ mới, rồi app nhắc bạn ôn lại từ cũ vào đúng lúc bạn bắt đầu dễ quên.\n\n**32–40s**\n[Chia đôi màn hình: bên trái một thẻ từ đã nhớ chắc, lịch ôn giãn xa; bên phải một thẻ từ hay quên, lịch ôn dày hơn.]\nTừ nào bạn nhớ chắc rồi, lâu lâu mới gặp lại. Từ nào hay quên, app cho gặp lại sớm hơn.\n\n**40–50s**\n[Chữ trên hình: \"Lặp lại ngắt quãng = ôn đúng lúc\". Minh họa các mốc ôn trên một đường thời gian, khoảng cách giữa các mốc giãn dần.]\nCách này gọi là lặp lại ngắt quãng. Nói nôm na là ôn đúng lúc, không ôn thừa, cũng không để lâu quá.\n\n**50–55s**\n[Người dùng ngồi trên xe buýt hoặc quán cà phê, thong thả lướt app. Chữ lớn: \"Không cần nhiều. Cần đều.\"]\nNên bạn không cần học nhiều. Chỉ cần học đều.\n\n**55–60s**\n[Màn hình kết: logo LexiGo, chữ \"Mỗi ngày 10 phút\", nút \"Tải LexiGo\".]\nTải LexiGo, rồi thử mười phút đầu tiên ngay tối nay nhé.\n<<<HET>>>\n\nGhi chú:\n- Phần lời thoại dài 156 chữ. Với tốc độ nói khoảng 2,5–3 chữ/giây thì vừa 60 giây.\n- Bạn muốn ghi chú hình ảnh trong ngoặc vuông nên mình chia kịch bản theo mốc thời gian, không dùng bảng 3 cột như mẫu mặc định của skill.\n- Kịch bản không có số liệu về hiệu quả, giá, gói miễn phí hay kho ứng dụng cụ thể, vì brief không cung cấp. Nếu LexiGo có những thông tin này, có thể thêm vào cảnh cuối.\n- Câu \"nhắc ôn đúng lúc bạn bắt đầu dễ quên\" mô tả cách lặp lại ngắt quãng hoạt động nói chung. Nên kiểm tra lại với đội sản phẩm để chắc tính năng nhắc ôn của app chạy đúng như vậy.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 4,
+        "channel_fit": 5,
+        "invented_facts": [
+          "Trải nghiệm cá nhân của người nói không có trong brief: 'Mình từng như thế. Ngồi học dồn cả buổi, rồi để đó...'",
+          "Tính năng điều chỉnh lịch ôn theo từng từ không có trong brief: từ nhớ chắc thì 'lâu lâu mới gặp lại', từ hay quên thì 'app cho gặp lại sớm hơn'",
+          "Khẳng định app nhắc ôn 'vào đúng lúc bạn bắt đầu dễ quên' khi brief không xác nhận điều này"
+        ],
+        "notes": "Kịch bản đúng brief, lời thoại khoảng 155 chữ, văn nói tự nhiên và chia mốc thời gian hợp video dọc, nhưng có thêm trải nghiệm cá nhân 'mình từng' và mô tả cơ chế ôn theo từng từ mà brief không cung cấp."
+      }
+    },
+    {
+      "id": "edit-polarity",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "preserved": {
+          "ok": true,
+          "detail": ""
+        },
+        "polarity": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "47 chữ (cho phép 30-120)"
+        }
+      },
+      "words": 47,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.1701138,
+      "num_turns": 4,
+      "duration_ms": 13401,
+      "output": "Theo báo cáo thường niên do chính Hòa Phát Food công bố, năm 2025 doanh thu của công ty tăng 12% so với năm trước. Cùng giai đoạn đó, chi phí vận hành giảm 5% nhờ công ty chuyển sang một nhà cung cấp bao bì mới.\n",
+      "raw": "<<<BAI>>>\nTheo báo cáo thường niên do chính Hòa Phát Food công bố, năm 2025 doanh thu của công ty tăng 12% so với năm trước. Cùng giai đoạn đó, chi phí vận hành giảm 5% nhờ công ty chuyển sang một nhà cung cấp bao bì mới.\n<<<HET>>>\n\nBản viết lại giữ nguyên các số liệu 12% và 5%, nguồn là báo cáo thường niên của chính công ty, và lý do chi phí giảm. Mốc \"năm trước\" vẫn để nguyên, không đổi thành \"2024\" vì đoạn gốc không ghi năm cụ thể. Tôi không tra cứu web nên chưa kiểm chứng các số liệu này.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Bài viết gọn hơn và tự nhiên hơn, vẫn giữ nguyên mọi số liệu (2025, 12%, 5%), nguồn báo cáo thường niên và lý do giảm chi phí, không thêm dữ kiện nào."
+      }
+    },
+    {
+      "id": "unverified-claim",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 1
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "182 chữ (cho phép 90-260)"
+        }
+      },
+      "words": 182,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.1963258,
+      "num_turns": 3,
+      "duration_ms": 26941,
+      "output": "Bạn chải răng mỗi ngày, nhưng đã chải đúng cách chưa?\n\nSâu răng và viêm nướu là những bệnh răng miệng rất thường gặp. Nhiều trường hợp bắt đầu từ thói quen chải răng qua loa. Chỉ cần điều chỉnh vài thói quen nhỏ dưới đây, răng của bạn sẽ sạch hơn rõ rệt:\n\n- Chải 2 lần mỗi ngày, mỗi lần khoảng 2 phút, dùng kem đánh răng có fluor.\n- Chọn bàn chải lông mềm, đặt nghiêng khoảng 45 độ về phía nướu.\n- Chải nhẹ theo vòng tròn nhỏ. Đừng chà mạnh theo chiều ngang vì dễ làm mòn men răng và tụt nướu.\n- Nhớ chải cả mặt trong, mặt nhai của răng và chải nhẹ lưỡi.\n- Thay bàn chải sau 3–4 tháng, hoặc sớm hơn nếu lông đã xơ.\n\nBàn chải không làm sạch được hết kẽ răng. Vì vậy, bạn nên dùng thêm chỉ nha khoa mỗi ngày và đi khám răng định kỳ 6 tháng một lần.\n\nNếu bạn hay chảy máu chân răng hoặc bị ê buốt khi chải, hãy đặt lịch để bác sĩ kiểm tra sớm.\n",
+      "raw": "<<<BAI>>>\nBạn chải răng mỗi ngày, nhưng đã chải đúng cách chưa?\n\nSâu răng và viêm nướu là những bệnh răng miệng rất thường gặp. Nhiều trường hợp bắt đầu từ thói quen chải răng qua loa. Chỉ cần điều chỉnh vài thói quen nhỏ dưới đây, răng của bạn sẽ sạch hơn rõ rệt:\n\n- Chải 2 lần mỗi ngày, mỗi lần khoảng 2 phút, dùng kem đánh răng có fluor.\n- Chọn bàn chải lông mềm, đặt nghiêng khoảng 45 độ về phía nướu.\n- Chải nhẹ theo vòng tròn nhỏ. Đừng chà mạnh theo chiều ngang vì dễ làm mòn men răng và tụt nướu.\n- Nhớ chải cả mặt trong, mặt nhai của răng và chải nhẹ lưỡi.\n- Thay bàn chải sau 3–4 tháng, hoặc sớm hơn nếu lông đã xơ.\n\nBàn chải không làm sạch được hết kẽ răng. Vì vậy, bạn nên dùng thêm chỉ nha khoa mỗi ngày và đi khám răng định kỳ 6 tháng một lần.\n\nNếu bạn hay chảy máu chân răng hoặc bị ê buốt khi chải, hãy đặt lịch để bác sĩ kiểm tra sớm.\n<<<HET>>>\n\n**Về câu \"90% người Việt mắc bệnh răng miệng\":** Tôi không đưa con số này vào bài. Câu này chưa có nguồn, và bạn yêu cầu tôi không tra cứu web nên tôi cũng không kiểm tra được. Bài của một phòng khám đăng một số liệu y tế không có nguồn thì vừa làm giảm uy tín, vừa dễ bị bình luận chất vấn. Thay vào đó, bài chỉ nói chung rằng sâu răng và viêm nướu \"rất thường gặp\", và nói vậy thì không cần dẫn số liệu.\n\nNếu khách hàng vẫn muốn dùng con số, có hai cách xử lý:\n1. Tìm khảo sát gốc, ví dụ điều tra sức khỏe răng miệng toàn quốc của Bộ Y tế hoặc Viện Răng Hàm Mặt. Sau đó ghi đúng con số, nhóm tuổi, năm khảo sát và tên nguồn ngay trong câu. Số liệu kiểu này thường chỉ áp dụng cho một nhóm tuổi hoặc một loại bệnh cụ thể, không phải cho \"người Việt\" nói chung.\n2. Nếu không tìm được nguồn thì bỏ hẳn con số. Đừng chuyển thành câu nghe như có số liệu, kiểu \"theo thống kê, phần lớn người Việt…\".\n\nCác hướng dẫn về cách chải răng trong bài là khuyến nghị phổ biến của nha khoa. Bác sĩ của phòng khám nên đọc lại trước khi đăng.",
+      "judge": {
+        "brief_fit": 4,
+        "natural_vietnamese": 5,
+        "factual_integrity": 5,
+        "channel_fit": 5,
+        "invented_facts": [],
+        "notes": "Bài đã bỏ hẳn con số 90% chưa có nguồn, thay bằng câu chung \"rất thường gặp\" nên trung thực; các mốc 2 phút, 45 độ, 3–4 tháng, 6 tháng là khuyến nghị nha khoa phổ biến chứ không phải dữ kiện bịa; giọng văn tự nhiên, hợp fanpage, độ dài trong khoảng 120–200 chữ, nhưng cụm \"sạch hơn rõ rệt\" hơi hứa quá và bài không cho khách hàng biết vì sao bỏ claim."
+      }
+    },
+    {
+      "id": "ai-audit",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 10
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "674 chữ (cho phép 80-700)"
+        }
+      },
+      "words": 674,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.29593820000000004,
+      "num_turns": 5,
+      "duration_ms": 43086,
+      "output": "Mình đã đọc `input.md` và rà toàn bộ theo `review/anti-ai.md` và `review/humanizer-patterns.md`. Không tra cứu web.\n\n## Kết quả audit\n\n| # | Pattern | Đoạn liên quan | Lý do sửa |\n|---|---|---|---|\n| 1 | Câu mở kiểu chatbot (#22) | \"Dưới đây là bài viết bạn yêu cầu.\" | Câu trợ lý nói với người dùng, không thuộc nội dung đăng công khai. Xóa. |\n| 2 | Dẫn dài trước khi vào ý chính (#4, mạnh) | \"Trong bối cảnh thị trường thay đổi chưa từng có\" | Câu dẫn chung chung, không có dữ kiện, chỉ đẩy con số 18% ra sau. Bỏ để vào thẳng chủ thể và số liệu. |\n| 3 | Thổi phồng tầm quan trọng (#13) | \"tạo nên một bước ngoặt lịch sử\" | Bài không có bằng chứng nào cho chữ \"lịch sử\" và cũng không nói ngày đó xảy ra chuyện gì. Hạ xuống \"mốc quan trọng\". |\n| 4 | Cấu trúc \"không chỉ X mà còn Y\" (#1, mạnh) | \"không chỉ đạt tỷ lệ quay lại 18% mà còn tạo nên…\" | Cấu trúc này dùng để làm câu kịch tính hơn, vế Y lại không có nội dung. Tách thành hai câu nói thẳng. |\n| 5 | \"Không phải X mà là Y\" để tỏ ra sâu sắc (#1, mạnh) và câu nghe sâu nhưng không kiểm chứng được (#3) | \"Đây không phải là câu chuyện về công cụ mà là câu chuyện về tư duy.\" | Câu phủ nhận một cách hiểu chưa ai nêu ra, còn \"tư duy\" thì mơ hồ, không gắn với dữ kiện nào. Xóa. |\n| 6 | Đối lập theo công thức và từ sáo (#1, #12) | \"Không chỉ nhanh hơn mà còn mạnh mẽ hơn.\" | Câu không có chủ ngữ, không nói nhanh hơn cái gì, không có số đo. Xóa. |\n| 7 | Nhãn in đậm để trang trí (#19) | **Điểm nhấn:**, **Ý nghĩa:**, **Kết luận:** | Gần như đoạn nào cũng mở bằng một nhãn in đậm, mà các nhãn này không giúp người đọc tìm thông tin. Bỏ nhãn, viết thành câu thường. |\n| 8 | Câu kết một dòng, mảnh câu kịch tính (#2, mạnh) | \"Và đó mới là điều đáng suy ngẫm.\" / \"Không ai còn có thể làm ngơ.\" | Hai dòng này chỉ tạo kịch tính, không thêm dữ kiện. Xóa và dừng bài ở dữ kiện cuối cùng. |\n\n## Đối chiếu dữ kiện trước và sau khi sửa\n\nCác chi tiết sau được giữ nguyên:\n- Tên Minh Châu.\n- Tỷ lệ quay lại 18%.\n- Ngày 10/09/2026.\n- URL `https://example.com/minh-chau`.\n- Trích dẫn \"mẫu 120 khách hàng\", giữ cả dấu ngoặc kép thẳng.\n- Chú thích nguồn [1].\n\nNhững chỗ có nguy cơ làm sai hoặc mất dữ kiện:\n- **Quan hệ giữa ngày và con số:** Theo câu gốc, ngày 10/09/2026 gắn với \"bước ngoặt\", không gắn với con số 18%. Bản sửa không viết \"ngày 10/09/2026 đạt 18%\", để không tạo ra một mốc thời gian mà bài gốc không nói.\n- **Hai câu ở mục 5 và 6 đã bị xóa:** Nếu tác giả có số liệu về tốc độ hoặc thay đổi quy trình, nên thêm lại dưới dạng câu có số đo cụ thể.\n- **Vị trí chú thích [1]:** Vẫn nằm sát câu trích dẫn như bản gốc. Mình không chuyển nó sang con số 18%, vì không biết nguồn [1] có xác nhận con số này hay không.\n\n\nMinh Châu đạt tỷ lệ quay lại 18%. Ngày 10/09/2026 là một mốc quan trọng với Minh Châu. Xem chi tiết tại https://example.com/minh-chau.\n\nBáo cáo ghi \"mẫu 120 khách hàng\" [1].\n\n\nHai điểm còn chưa rõ:\n- Bài gốc không nói ngày 10/09/2026 xảy ra chuyện gì. \"Mốc quan trọng\" vẫn là một nhận định chưa có căn cứ, nên bổ sung sự kiện cụ thể (ra mắt sản phẩm, công bố báo cáo…). Nếu không có thì nên bỏ câu này.\n- Chưa rõ \"tỷ lệ quay lại\" là tỷ lệ của ai (khách hàng hay người dùng) và tính trong kỳ nào. Cũng chưa rõ con số 18% có lấy từ mẫu 120 khách hàng ở nguồn [1] hay không. Mình chưa kiểm chứng được nên không tự ghép hai dữ kiện này với nhau.\n",
+      "raw": "Mình đã đọc `input.md` và rà toàn bộ theo `review/anti-ai.md` và `review/humanizer-patterns.md`. Không tra cứu web.\n\n## Kết quả audit\n\n| # | Pattern | Đoạn liên quan | Lý do sửa |\n|---|---|---|---|\n| 1 | Câu mở kiểu chatbot (#22) | \"Dưới đây là bài viết bạn yêu cầu.\" | Câu trợ lý nói với người dùng, không thuộc nội dung đăng công khai. Xóa. |\n| 2 | Dẫn dài trước khi vào ý chính (#4, mạnh) | \"Trong bối cảnh thị trường thay đổi chưa từng có\" | Câu dẫn chung chung, không có dữ kiện, chỉ đẩy con số 18% ra sau. Bỏ để vào thẳng chủ thể và số liệu. |\n| 3 | Thổi phồng tầm quan trọng (#13) | \"tạo nên một bước ngoặt lịch sử\" | Bài không có bằng chứng nào cho chữ \"lịch sử\" và cũng không nói ngày đó xảy ra chuyện gì. Hạ xuống \"mốc quan trọng\". |\n| 4 | Cấu trúc \"không chỉ X mà còn Y\" (#1, mạnh) | \"không chỉ đạt tỷ lệ quay lại 18% mà còn tạo nên…\" | Cấu trúc này dùng để làm câu kịch tính hơn, vế Y lại không có nội dung. Tách thành hai câu nói thẳng. |\n| 5 | \"Không phải X mà là Y\" để tỏ ra sâu sắc (#1, mạnh) và câu nghe sâu nhưng không kiểm chứng được (#3) | \"Đây không phải là câu chuyện về công cụ mà là câu chuyện về tư duy.\" | Câu phủ nhận một cách hiểu chưa ai nêu ra, còn \"tư duy\" thì mơ hồ, không gắn với dữ kiện nào. Xóa. |\n| 6 | Đối lập theo công thức và từ sáo (#1, #12) | \"Không chỉ nhanh hơn mà còn mạnh mẽ hơn.\" | Câu không có chủ ngữ, không nói nhanh hơn cái gì, không có số đo. Xóa. |\n| 7 | Nhãn in đậm để trang trí (#19) | **Điểm nhấn:**, **Ý nghĩa:**, **Kết luận:** | Gần như đoạn nào cũng mở bằng một nhãn in đậm, mà các nhãn này không giúp người đọc tìm thông tin. Bỏ nhãn, viết thành câu thường. |\n| 8 | Câu kết một dòng, mảnh câu kịch tính (#2, mạnh) | \"Và đó mới là điều đáng suy ngẫm.\" / \"Không ai còn có thể làm ngơ.\" | Hai dòng này chỉ tạo kịch tính, không thêm dữ kiện. Xóa và dừng bài ở dữ kiện cuối cùng. |\n\n## Đối chiếu dữ kiện trước và sau khi sửa\n\nCác chi tiết sau được giữ nguyên:\n- Tên Minh Châu.\n- Tỷ lệ quay lại 18%.\n- Ngày 10/09/2026.\n- URL `https://example.com/minh-chau`.\n- Trích dẫn \"mẫu 120 khách hàng\", giữ cả dấu ngoặc kép thẳng.\n- Chú thích nguồn [1].\n\nNhững chỗ có nguy cơ làm sai hoặc mất dữ kiện:\n- **Quan hệ giữa ngày và con số:** Theo câu gốc, ngày 10/09/2026 gắn với \"bước ngoặt\", không gắn với con số 18%. Bản sửa không viết \"ngày 10/09/2026 đạt 18%\", để không tạo ra một mốc thời gian mà bài gốc không nói.\n- **Hai câu ở mục 5 và 6 đã bị xóa:** Nếu tác giả có số liệu về tốc độ hoặc thay đổi quy trình, nên thêm lại dưới dạng câu có số đo cụ thể.\n- **Vị trí chú thích [1]:** Vẫn nằm sát câu trích dẫn như bản gốc. Mình không chuyển nó sang con số 18%, vì không biết nguồn [1] có xác nhận con số này hay không.\n\n<<<BAI>>>\nMinh Châu đạt tỷ lệ quay lại 18%. Ngày 10/09/2026 là một mốc quan trọng với Minh Châu. Xem chi tiết tại https://example.com/minh-chau.\n\nBáo cáo ghi \"mẫu 120 khách hàng\" [1].\n<<<HET>>>\n\nHai điểm còn chưa rõ:\n- Bài gốc không nói ngày 10/09/2026 xảy ra chuyện gì. \"Mốc quan trọng\" vẫn là một nhận định chưa có căn cứ, nên bổ sung sự kiện cụ thể (ra mắt sản phẩm, công bố báo cáo…). Nếu không có thì nên bỏ câu này.\n- Chưa rõ \"tỷ lệ quay lại\" là tỷ lệ của ai (khách hàng hay người dùng) và tính trong kỳ nào. Cũng chưa rõ con số 18% có lấy từ mẫu 120 khách hàng ở nguồn [1] hay không. Mình chưa kiểm chứng được nên không tự ghép hai dữ kiện này với nhau.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 4,
+        "channel_fit": 5,
+        "invented_facts": [
+          "Dẫn chiếu tới các file `review/anti-ai.md`, `review/humanizer-patterns.md` và số hiệu pattern (#1, #2, #4, #22…) mà brief và nguồn không nhắc tới"
+        ],
+        "notes": "Bài làm đủ yêu cầu của brief: có bảng pattern kèm đoạn liên quan và lý do sửa, bản cuối giữ đúng tên, con số, ngày, URL, trích dẫn và chú thích [1], tiếng Việt tự nhiên; điểm trừ là bản cuối vẫn khẳng định 'mốc quan trọng' chưa có căn cứ (dù bài đã tự cảnh báo) và dẫn chiếu các file quy tắc cùng số hiệu pattern mà brief không có."
+      }
+    },
+    {
+      "id": "repurpose-two-channels",
+      "pass": true,
+      "checks": {
+        "extracted": {
+          "ok": true,
+          "detail": ""
+        },
+        "lint_errors": {
+          "ok": true,
+          "detail": "",
+          "warns": 0
+        },
+        "keep": {
+          "ok": true,
+          "detail": ""
+        },
+        "phrases": {
+          "ok": true,
+          "detail": ""
+        },
+        "length": {
+          "ok": true,
+          "detail": "243 chữ (cho phép 170-420)"
+        }
+      },
+      "words": 243,
+      "model": "claude-opus-5-5",
+      "cost_usd": 0.3762612,
+      "num_turns": 11,
+      "duration_ms": 73536,
+      "output": "LinkedIn\n\nTrung tâm Ngoại ngữ Việt Anh mở lớp IELTS buổi tối, khai giảng từ ngày 01/11/2026.\n\nLớp dành cho người đi làm, sinh viên và những ai muốn ôn IELTS nhưng ban ngày đã kín lịch.\n\nMỗi lớp nhận tối đa 12 học viên. Sĩ số nhỏ giúp mỗi người có nhiều lượt nói hơn trong buổi học, bài viết được góp ý kỹ hơn và giáo viên dễ nắm tiến độ của từng học viên.\n\nHọc phí cho một khóa là 6,5 triệu đồng.\n\nNhiều người trì hoãn IELTS vì nghĩ phải chờ đến lúc rảnh. Nhưng lúc rảnh hiếm khi tự đến. Một lớp học cố định vào buổi tối là cách đơn giản để biến dự định \"sẽ học\" thành lịch học có thật mỗi tuần.\n\nNếu bạn đang chuẩn bị IELTS cho du học, hồ sơ xin việc hay chuẩn đầu ra, hoặc biết đồng nghiệp, người thân đang cần, hãy nhắn tin cho Trung tâm Ngoại ngữ Việt Anh để được tư vấn và giữ chỗ.\n\nMỗi lớp chỉ có 12 chỗ, nên đăng ký sớm sẽ dễ chọn được lớp phù hợp hơn.\n\nZalo\n\nTrung tâm Ngoại ngữ Việt Anh mở lớp IELTS buổi tối từ 01/11/2026\n\nAnh/chị bận ban ngày vẫn có thể ôn IELTS sau giờ làm. Mỗi lớp tối đa 12 học viên, học phí 6,5 triệu đồng/khóa.\n\nAnh/chị muốn giữ chỗ hoặc cần tư vấn, vui lòng trả lời tin nhắn này.\n",
+      "raw": "<<<BAI>>>\nLinkedIn\n\nTrung tâm Ngoại ngữ Việt Anh mở lớp IELTS buổi tối, khai giảng từ ngày 01/11/2026.\n\nLớp dành cho người đi làm, sinh viên và những ai muốn ôn IELTS nhưng ban ngày đã kín lịch.\n\nMỗi lớp nhận tối đa 12 học viên. Sĩ số nhỏ giúp mỗi người có nhiều lượt nói hơn trong buổi học, bài viết được góp ý kỹ hơn và giáo viên dễ nắm tiến độ của từng học viên.\n\nHọc phí cho một khóa là 6,5 triệu đồng.\n\nNhiều người trì hoãn IELTS vì nghĩ phải chờ đến lúc rảnh. Nhưng lúc rảnh hiếm khi tự đến. Một lớp học cố định vào buổi tối là cách đơn giản để biến dự định \"sẽ học\" thành lịch học có thật mỗi tuần.\n\nNếu bạn đang chuẩn bị IELTS cho du học, hồ sơ xin việc hay chuẩn đầu ra, hoặc biết đồng nghiệp, người thân đang cần, hãy nhắn tin cho Trung tâm Ngoại ngữ Việt Anh để được tư vấn và giữ chỗ.\n\nMỗi lớp chỉ có 12 chỗ, nên đăng ký sớm sẽ dễ chọn được lớp phù hợp hơn.\n\nZalo\n\nTrung tâm Ngoại ngữ Việt Anh mở lớp IELTS buổi tối từ 01/11/2026\n\nAnh/chị bận ban ngày vẫn có thể ôn IELTS sau giờ làm. Mỗi lớp tối đa 12 học viên, học phí 6,5 triệu đồng/khóa.\n\nAnh/chị muốn giữ chỗ hoặc cần tư vấn, vui lòng trả lời tin nhắn này.\n<<<HET>>>\n\nBản LinkedIn dài khoảng 189 chữ, tin Zalo khoảng 52 chữ (đếm bằng `wc -w`). Công cụ kiểm tra văn phong của skill không phát hiện lỗi nào ở cả hai bản. Hai bản dùng cùng ba dữ kiện: khai giảng 01/11/2026, tối đa 12 học viên mỗi lớp, học phí 6,5 triệu đồng/khóa.\n\nGiả định và điểm cần lưu ý:\n- **Không thêm thông tin ngoài dữ kiện:** tôi không viết giờ học, số buổi, thời lượng khóa, trình độ đầu vào hay số điện thoại vì dữ kiện không có. Lời kêu gọi chỉ là \"nhắn tin cho trung tâm\" (LinkedIn) và \"trả lời tin nhắn này\" (Zalo). Nếu có hotline hoặc link đăng ký, nên thêm vào.\n- **Cách xưng hô:** bản LinkedIn gọi người đọc là \"bạn\", tin Zalo gọi là \"anh/chị\", vì không biết rõ nhóm khách nhận tin.\n- **Một ý suy luận:** câu nói về lợi ích của lớp nhỏ (nhiều lượt nói hơn, được góp ý kỹ hơn) là suy ra từ sĩ số, không phải cam kết của trung tâm. Nên bỏ câu này nếu trung tâm không muốn hứa điều đó.\n- **Không có hashtag và emoji:** đề bài không yêu cầu nên tôi không thêm.\n- **Chưa đăng:** cả hai bài mới là bản nháp, chưa đăng hay gửi đi đâu.",
+      "judge": {
+        "brief_fit": 5,
+        "natural_vietnamese": 5,
+        "factual_integrity": 4,
+        "channel_fit": 4,
+        "invented_facts": [
+          "Đối tượng học viên là 'người đi làm, sinh viên' (brief không nêu)",
+          "Lịch học 'mỗi tuần' (brief không nêu tần suất hay lịch học)",
+          "Có nhiều lớp để chọn ('dễ chọn được lớp phù hợp hơn', 'mỗi lớp'), trong khi brief chỉ nói 'mở lớp'",
+          "Kênh liên hệ là nhắn tin cho trung tâm (brief không nêu)",
+          "Mục đích học như du học, hồ sơ xin việc, chuẩn đầu ra (brief không nêu)"
+        ],
+        "notes": "Bài dùng đúng và nhất quán ba số liệu (01/11/2026, 12 học viên, 6,5 triệu đồng/khóa) ở cả hai phiên bản, đúng độ dài và tiếng Việt tự nhiên; tuy vậy bài thêm vài suy diễn nhẹ không có trong brief như lịch học hằng tuần, có nhiều lớp để chọn và đối tượng học viên, còn bản LinkedIn hơi giống quảng cáo hơn văn phong chuyên nghiệp."
+      }
+    }
+  ]
+}

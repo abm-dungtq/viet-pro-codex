@@ -1,0 +1,218 @@
+[
+  {
+    "id": "linkedin-write",
+    "task": "write",
+    "prompt": "Viết một bài LinkedIn 250-400 chữ về việc Công ty Minh An dùng AI trong đào tạo nội bộ. Độc giả là founder công nghệ Việt Nam. Giọng chuyên nghiệp, rõ ràng, không phô trương. Dữ kiện: khóa đào tạo kéo dài 6 tuần; 62% nhân viên hoàn thành; thời gian onboarding giảm từ 30 xuống 18 ngày. Giữ nguyên toàn bộ số liệu. Không thêm CTA bán hàng, không dùng hashtag.",
+    "keep": [
+      "Minh An",
+      "6 tuần",
+      "62%",
+      "30",
+      "18"
+    ],
+    "must_not_include": [
+      "#",
+      "Dưới đây là",
+      "Hy vọng bài viết"
+    ],
+    "min_words": 230,
+    "max_words": 440
+  },
+  {
+    "id": "facebook-humanize",
+    "task": "edit",
+    "source_file": "tests/humanizer/facebook-before.md",
+    "prompt": "Humanize bài Facebook trong file input.md: bớt dấu hiệu AI, giữ giọng thân thiện. Giữ nguyên tên, số liệu, ngày, URL, trích dẫn và citation.",
+    "keep": [
+      "Minh Châu",
+      "18%",
+      "10/09/2026",
+      "https://example.com/minh-chau",
+      "120"
+    ],
+    "compare_source": true,
+    "must_not_include": [
+      "Dưới đây là",
+      "Không ai còn có thể làm ngơ"
+    ],
+    "min_words": 25,
+    "max_words": 120
+  },
+  {
+    "id": "technical-preserve",
+    "task": "edit",
+    "source_file": "tests/humanizer/technical.md",
+    "prompt": "Rà văn phong phần văn xuôi trong file input.md. Giữ nguyên frontmatter và khối code. Trả lại toàn bộ file sau khi sửa.",
+    "keep": [
+      "title: \"Dưới đây là cấu hình\"",
+      "model: gpt-example",
+      "command: \"Không chỉ đọc mà còn ghi\"",
+      "url: https://example.com/api?v=2",
+      "```yaml"
+    ],
+    "compare_source": true,
+    "min_words": 20,
+    "max_words": 80
+  },
+  {
+    "id": "blog-seo-write",
+    "task": "write",
+    "prompt": "Viết bài blog SEO 500-750 chữ cho chủ quán cà phê nhỏ, từ khóa chính \"quản lý dòng tiền\". Có tiêu đề H1 và 3-5 tiêu đề H2. Dữ kiện: quán mẫu có doanh thu 120 triệu đồng/tháng, chi phí nguyên liệu chiếm 35%. Không bịa thêm số liệu. Không tra cứu web.",
+    "keep": [
+      "120 triệu",
+      "35%"
+    ],
+    "must_include": [
+      "quản lý dòng tiền",
+      "# "
+    ],
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "min_words": 450,
+    "max_words": 820
+  },
+  {
+    "id": "newsletter-write",
+    "task": "write",
+    "prompt": "Viết mục mở đầu newsletter tuần (150-250 chữ) gửi khách hàng của Công ty Sao Mai, thông báo phần mềm kế toán bản 4.2 ra mắt ngày 15/10/2026 với tính năng xuất hóa đơn điện tử hàng loạt. Giọng ấm áp, ngắn gọn. Không dùng emoji.",
+    "keep": [
+      "Sao Mai",
+      "4.2",
+      "15/10/2026"
+    ],
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "min_words": 130,
+    "max_words": 280
+  },
+  {
+    "id": "zalo-short",
+    "task": "write",
+    "prompt": "Viết tin nhắn Zalo OA dưới 100 chữ nhắc khách hàng lịch bảo dưỡng xe miễn phí tại Garage Phú Thịnh ngày 20/10/2026, hotline 0909 123 456. Lịch sự, không dùng IN HOA để nhấn.",
+    "keep": [
+      "Phú Thịnh",
+      "20/10/2026",
+      "0909 123 456"
+    ],
+    "must_not_include": [
+      "Dưới đây là",
+      "MIỄN PHÍ"
+    ],
+    "min_words": 25,
+    "max_words": 110
+  },
+  {
+    "id": "x-thread",
+    "task": "write",
+    "prompt": "Viết một thread X gồm 5-7 tweet bằng tiếng Việt, mỗi tweet đánh số dạng 1/, 2/, ... và dưới 280 ký tự, giải thích vì sao doanh nghiệp nhỏ nên sao lưu dữ liệu theo quy tắc 3-2-1 (3 bản sao, 2 loại phương tiện, 1 bản ngoài trụ sở). Không tra cứu web.",
+    "keep": [
+      "3-2-1",
+      "1/",
+      "2/",
+      "3/",
+      "4/",
+      "5/"
+    ],
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "min_words": 120,
+    "max_words": 450
+  },
+  {
+    "id": "video-script",
+    "task": "write",
+    "prompt": "Viết kịch bản video dọc 60 giây (khoảng 130-170 chữ lời thoại) giới thiệu app học từ vựng tiếng Anh LexiGo, điểm chính: mỗi ngày 10 phút, nhắc ôn theo lặp lại ngắt quãng. Ghi chú hình ảnh trong ngoặc vuông. Văn nói tự nhiên.",
+    "keep": [
+      "LexiGo",
+      "10 phút"
+    ],
+    "must_include": [
+      "["
+    ],
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "min_words": 110,
+    "max_words": 260,
+    "count_spoken_only": true
+  },
+  {
+    "id": "edit-polarity",
+    "task": "edit",
+    "source_file": "tests/eval/fixtures/polarity-source.md",
+    "prompt": "Viết lại đoạn trong file input.md cho gọn và dễ đọc hơn, cùng độ dài hoặc ngắn hơn. Giữ nguyên ý nghĩa và mọi số liệu.",
+    "keep": [
+      "12%",
+      "5%",
+      "2025",
+      "Hòa Phát Food"
+    ],
+    "compare_source": true,
+    "polarity": [
+      [
+        "tăng",
+        "12%"
+      ],
+      [
+        "giảm",
+        "5%"
+      ]
+    ],
+    "min_words": 30,
+    "max_words": 120
+  },
+  {
+    "id": "unverified-claim",
+    "task": "write",
+    "prompt": "Viết đoạn 120-200 chữ cho fanpage một phòng khám nha khoa về việc chải răng đúng cách. Khách hàng muốn đưa câu \"90% người Việt mắc bệnh răng miệng\" vào bài nhưng không có nguồn. Không tra cứu web. Xử lý claim đó một cách trung thực.",
+    "keep": [],
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "judge_focus": "Bài không được khẳng định con số 90% như sự thật đã xác minh; nếu nhắc tới phải có cảnh báo chưa có nguồn hoặc bỏ đi.",
+    "min_words": 90,
+    "max_words": 260
+  },
+  {
+    "id": "ai-audit",
+    "task": "edit",
+    "source_file": "tests/humanizer/facebook-before.md",
+    "prompt": "Audit dấu hiệu AI trong file input.md. Liệt kê pattern tìm thấy, đoạn liên quan, lý do sửa, rồi đưa bản cuối đã sửa.",
+    "keep": [
+      "Minh Châu",
+      "18%",
+      "10/09/2026"
+    ],
+    "must_include": [
+      "pattern"
+    ],
+    "min_words": 80,
+    "max_words": 700,
+    "grade_full_response": true
+  },
+  {
+    "id": "repurpose-two-channels",
+    "task": "write",
+    "prompt": "Từ dữ kiện sau, viết 2 phiên bản: (1) bài LinkedIn 150-250 chữ, (2) tin Zalo dưới 80 chữ. Đặt tiêu đề \"LinkedIn\" và \"Zalo\" trước mỗi phiên bản. Dữ kiện: Trung tâm Ngoại ngữ Việt Anh mở lớp IELTS buổi tối từ 01/11/2026, sĩ số tối đa 12 học viên, học phí 6,5 triệu đồng/khóa. Hai phiên bản phải dùng cùng số liệu.",
+    "keep": [
+      "Việt Anh",
+      "01/11/2026",
+      "12",
+      "6,5 triệu",
+      "LinkedIn",
+      "Zalo"
+    ],
+    "keep_min_count": {
+      "01/11/2026": 2,
+      "6,5 triệu": 2
+    },
+    "must_not_include": [
+      "Dưới đây là"
+    ],
+    "min_words": 170,
+    "max_words": 420
+  }
+]
