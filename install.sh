@@ -85,9 +85,9 @@ trap cleanup EXIT
 
 sha256_check() {
   if command -v sha256sum >/dev/null 2>&1; then
-    sha256sum --quiet -c "$1"
+    sha256sum -c "$1" >/dev/null
   elif command -v shasum >/dev/null 2>&1; then
-    shasum -a 256 --quiet -c "$1"
+    shasum -a 256 -c "$1" >/dev/null
   else
     die "Không tìm thấy sha256sum hoặc shasum để kiểm tra checksum"
   fi
